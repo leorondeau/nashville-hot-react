@@ -19,7 +19,7 @@ export const NavBar = (props) => {
                     <li className="nav-item">
                         <button className="nav-link fakeLink"
                             onClick={() => {
-                                localStorage.removeItem("lu_token")
+                                localStorage.removeItem("nashvillehot_token")
                                 props.history.push({ pathname: "/" })
                             }}
                         >Logout</button>
