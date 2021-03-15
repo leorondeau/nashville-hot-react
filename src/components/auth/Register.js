@@ -6,7 +6,7 @@ export const Register = (props) => {
     const firstName = React.createRef()
     const lastName = React.createRef()
     const email = React.createRef()
-    const bio = React.createRef()
+    const heatTolerance = React.createRef()
     const password = React.createRef()
     const verifyPassword = React.createRef()
     const passwordDialog = React.createRef()
@@ -19,7 +19,7 @@ export const Register = (props) => {
                 "username": email.current.value,
                 "first_name": firstName.current.value,
                 "last_name": lastName.current.value,
-                "bio": bio.current.value,
+                "heat_tolerance": heatTolerance.current.value,
                 "email": email.current.value,
                 "password": password.current.value
             }
@@ -75,8 +75,8 @@ export const Register = (props) => {
                     <input ref={verifyPassword} type="password" name="verifyPassword" className="form-control" placeholder="Verify password" required />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="verifyPassword"> Verify Password </label>
-                    <textarea ref={bio} name="bio" className="form-control" placeholder="Let other gamers know a little bit about you..." />
+                    <label htmlFor="heatTolerance"> Heat Tolerance </label>
+                    <textarea ref={heatTolerance} name="heatTolerance" className="form-control" placeholder="1-100" />
                 </fieldset>
                 <fieldset style={{
                     textAlign: "center"
