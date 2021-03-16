@@ -4,6 +4,7 @@ export const RestaurantContext = React.createContext()
 
 export const RestaurantProvider = (props) => {
     const [restaurants, setRestaurants] = useState([])
+    const [restaurant, setRestaurant ] = useState({})
 
     const getRestaurants = () => {
         return fetch("http://localhost:8000/restaurants", {
@@ -16,9 +17,21 @@ export const RestaurantProvider = (props) => {
 
     }
 
+    const getRestaurantById = (id) => {
+        return fetch(`http://localhost:8000/restaurants/${id}`, {
+            headers: {
+                "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`  
+            }
+        })
+            .then(response => response.json())
+            .then(setRestaurant)
+
+    }
+    
+
 return (
     <RestaurantContext.Provider 
-    value={{ restaurants, setRestaurants}}>
+    value={{ restaurants, restaurant, setRestaurants, getRestaurants, getRestaurantById}}>
         {props.children}
     </RestaurantContext.Provider>
 ) 
