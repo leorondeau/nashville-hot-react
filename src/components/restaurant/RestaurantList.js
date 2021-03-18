@@ -1,4 +1,4 @@
-import React, {  useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { RestaurantContext } from './RestaurantProvider'
 
 import Dropdown from 'react-bootstrap/Dropdown'
@@ -9,8 +9,9 @@ export const RestaurantList = (props) => {
     const { restaurants, getRestaurants } = useContext(RestaurantContext)
     const [currentRestaurant, setCurrentRestaurant] = useState("")
 
-    
+    // const restaurantid = parseInt(props.history.location.pathname.split("/")[3])
     // console.log("restaurantid", restaurantid)
+
     useEffect(() => {
         getRestaurants()
 
@@ -19,33 +20,32 @@ export const RestaurantList = (props) => {
 
     return (
         <>
+            <section>
 
-            <header className="restaurants__header">
-                <h1>Nashville Hot Chicken Restaurant</h1>
-            </header>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="name"> </label>
-                    <select type="dropdown" name="name" className="form-control"
-                        value={currentRestaurant}
-                        onChange={(e) => {   
-                            setCurrentRestaurant(e.target.value)
-                            props.history.push(`/restaurant/${e.target.value}`) 
-                            
 
-                        }}
-                    
+                <header className="restaurants__header restaurant">
+                    <h4>Nashville Hot Chicken Restaurant</h4>
+                </header>
+                <fieldset>
+                    <div className="restaurants">
+                        <label htmlFor="name"> </label>
+                        <select type="dropdown" name="name" className="form-control"
+                            value={currentRestaurant}
+                            onChange={(e) => {
+                                setCurrentRestaurant(e.target.value)
+                                props.history.push(`/restaurant/${e.target.value}`)
+                            }}
                         >
-                        <option value="0">Select a restaurant...</option>
-                        {
-                            restaurants.map(r => (
-                                
-                                <option  key={r.id} value={`${r.name}/${r.id}`}>{r.name}</option>
-                            ))
-                        }
-                    </select>
-                </div>
-            </fieldset>
+                            <option value="0">Select a restaurant...</option>
+                            {
+                                restaurants.map(r => (
+                                    <option key={r.id} value={`${r.name}/${r.id}`}>{r.name}</option>
+                                ))
+                            }
+                        </select>
+                    </div>
+                </fieldset>
+            </section>
         </>
     )
 }
