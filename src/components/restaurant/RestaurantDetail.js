@@ -9,19 +9,23 @@ export const RestaurantDetail = (props) => {
     // const [restaurant, setRestaurant ] = useState({heatlevels: {}})
 
     const restaurantid = parseInt(props.history.location.pathname.split("/")[3])
+    const restauranturl = props.history.location.pathname.split("/")[1]
 
     useEffect(() => {
-        getRestaurantById(restaurantid)
-
-
+        if(isNaN(restaurantid)) {} 
+        else {getRestaurantById(restaurantid)}
     }, [restaurantid])
 
     return (
-        <section className="restaurant">
-            <div>
-                <img src={`${restaurant.img}`} className="restaurant__img"></img>
+        <section className="restaurant ">
+            <div className="restaurant__detail">
+                <div className="restaurant__website">
+                    <a href={restaurant.website} >{restaurant.website}</a>
+                </div>
+                <div >
+                    <img src={`${restaurant.img}`} className="restaurant__img"></img>
+                </div>
             </div>
-            <a href={restaurant.website} className="restaurant__website">{restaurant.website}</a>
         </section>
     )
 }

@@ -19,7 +19,8 @@ export const OrderProvider = (props) => {
     const getOrdersByUserByRestaurantId = (restaurantid) => {
         return fetch(`http://localhost:8000/orders?restaurantid=${restaurantid}`, {
             headers: {
-                "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`
+                "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`,
+                
             }
         })
             .then(response => response.json())

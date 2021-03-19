@@ -12,3 +12,13 @@ code {
     monospace;
 } */
 
+/* .restaurant {
+  border: solid greenyellow;
+} */
+
+h4 {
+  border-bottom: solid 2px;
+  background-color: red;
+  padding: 0px ;
+  color: yellow;
+}

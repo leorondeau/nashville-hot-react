@@ -31,7 +31,7 @@ export const OrderList = (props) => {
 
             <section>
                 <header className="restaurants__header restaurant">
-                    <h4>Nashville Hot History</h4>
+                    <h4>Nashville Hot Visits</h4>
                 </header>
                 {
                     orders.map(o => (

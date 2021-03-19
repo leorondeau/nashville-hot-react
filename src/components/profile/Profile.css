@@ -4,3 +4,10 @@
     justify-content: space-evenly;
     width: 100%;
   }
+
+.profile__card {
+    border: solid black 2px;
+    border-radius: 5px;
+    padding: 10px
+
+}

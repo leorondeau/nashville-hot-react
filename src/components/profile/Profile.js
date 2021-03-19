@@ -9,16 +9,18 @@ import "./Profile.css"
 export const Profile = (props) => {
     return (
         <>
-        <div className="profile">
-            <div>
-                < OrderList {...props} />
+            <div className="profile">
+                <div className="profile__card">
+                    < OrderList {...props} />
+                </div>
+                <div className="profile__card">
+                    < RestaurantList  {...props} />
+                    <RestaurantDetail {...props} />
+                </div>
+                <div className="profile__card">
+                    <RestaurantHeatList {...props} />
+                </div>
             </div>
-            <div>
-                < RestaurantList  {...props} />
-                <RestaurantDetail {...props} />
-            </div>
-            <RestaurantHeatList {...props} />
-        </div>
         </>
     )
 }
