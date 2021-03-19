@@ -4,5 +4,20 @@ img {
     
 }
 
+.restaurant__detail {
+    margin-top: 20px;
+   
+    /* width: 70%; */
+    /* border: 3px solid #73AD21; */
+    /* padding: 10px */
+}
+
+.restaurant__website {
+    margin-top: auto;
+    width: 70%;
+    /* border: 3px solid #73AD21; */
+    padding: 10px
+}
+
 
 
