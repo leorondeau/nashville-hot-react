@@ -8,14 +8,15 @@ export const NavBar = (props) => {
             <li className="navbar__item">
             <Link className="nav-link" to="/">Home</Link>
             </li>
-            <li className="navbar__item">
+            {/* <li className="navbar__item">
                 Navigation link
             </li>
             <li className="navbar__item">
                 Navigation link
-            </li>
+            </li> */}
             {
                 (localStorage.getItem("nashvillehot_token") !== null) ?
+                    
                     <li className="nav-item">
                         <button className="nav-link fakeLink"
                             onClick={() => {
