@@ -24,7 +24,7 @@ export const RestaurantList = (props) => {
 
 
                 <header className="restaurants__header restaurant">
-                    <h4>Nashville Hot Chicken Restaurant</h4>
+                    <h4>Nashville Hot Restaurant</h4>
                 </header>
                 <fieldset>
                     <div className="restaurants">
@@ -49,6 +49,15 @@ export const RestaurantList = (props) => {
         </>
     )
 }
+
+// {
+//     (e.target.value === 0)
+//     ? props.history.push(`/`)
+//     : setCurrentRestaurant(e.target.value).then(
+//     props.history.push(`/restaurant/${e.target.value}`)) 
+//     }  
+
+
 
 {/* <Dropdown onSelect={selectedRestaurant} >
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
