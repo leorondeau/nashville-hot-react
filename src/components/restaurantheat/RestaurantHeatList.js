@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { RestaurantHeatContext } from './RestaurantHeatProvider'
-
+import "./RestaurantHeat.css"
 import Dropdown from 'react-bootstrap/Dropdown'
 
 
@@ -13,8 +13,12 @@ export const RestaurantHeatList = (props) => {
 
 
     useEffect(() => {
+        if(isNaN(restaurantid)) {
+        
+        } 
+        else {
         getRestaurantHeatByRestaurantId(restaurantid)
-
+        }
     }, [restaurantid])
 
 
@@ -22,7 +26,7 @@ export const RestaurantHeatList = (props) => {
         <>
             <section>
                 <header className="restaurants__header restaurant">
-                    <h1>Averages</h1>
+                    <h4>Nashville Hot Average</h4>
                 </header>
                 <div>
                     {
