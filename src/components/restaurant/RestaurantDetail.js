@@ -1,18 +1,19 @@
 import React, { useContext, useEffect } from 'react'
+import {useParams, useHistory} from 'react-router-dom'
 import { RestaurantContext } from './RestaurantProvider'
-import { Link } from "react-router-dom"
 import "./Restaurant.css"
 import "../profile/Profile.css"
 
 export const RestaurantDetail = (props) => {
     const { restaurant, getRestaurantById } = useContext(RestaurantContext)
-    // const [restaurant, setRestaurant ] = useState({heatlevels: {}})
-
-    const restaurantid = parseInt(props.history.location.pathname.split("/")[3])
-    const restauranturl = props.history.location.pathname.split("/")[1]
+    const params = useParams()
+    const history = useHistory()
+    const restaurantid = parseInt(params.restaurantId)
 
     useEffect(() => {
-        if(isNaN(restaurantid)) {} 
+        if( restaurantid == 0) {
+            history.push("/")
+        } 
         else {getRestaurantById(restaurantid)}
     }, [restaurantid])
 
