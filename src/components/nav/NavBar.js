@@ -1,12 +1,21 @@
-import React from "react"
+import React, { useEffect, useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import "./NavBar.css"
+import { RestaurantContext } from '../restaurant/RestaurantProvider'
 
 export const NavBar = (props) => {
+    const restaurantid = parseInt(props.history.location.pathname.split("/")[3])
+
+
     return (
         <ul className="navbar">
             <li className="navbar__item">
-            <Link className="nav-link" to="/">Home</Link>
+                <button className="nav-link" onClick={() => {
+
+                    props.history.push("/")
+                }
+
+                }>Reset Form</button>
             </li>
             {/* <li className="navbar__item">
                 Navigation link
@@ -16,7 +25,7 @@ export const NavBar = (props) => {
             </li> */}
             {
                 (localStorage.getItem("nashvillehot_token") !== null) ?
-                    
+
                     <li className="nav-item">
                         <button className="nav-link fakeLink"
                             onClick={() => {

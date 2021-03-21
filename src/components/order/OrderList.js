@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import {useParams, useHistory} from 'react-router-dom'
 import { OrderContext } from './OrderProvider'
 import { Order } from './Order'
 import Dropdown from 'react-bootstrap/Dropdown'
@@ -7,14 +8,13 @@ import Dropdown from 'react-bootstrap/Dropdown'
 
 export const OrderList = (props) => {
     const { orders, getOrdersByUser, getOrdersByUserByRestaurantId } = useContext(OrderContext)
-    // const [order, setOrder] = useState({})
-    // const [orders, setOrders] = useState([])
+    const params = useParams()
+    const history = useHistory()
+    const restaurantid = parseInt(params.restaurantId)
 
-    const restaurantid = parseInt(props.history.location.pathname.split("/")[3])
-    // console.log("restaurantid", restaurantid)
 
     useEffect(() => {
-        if (isNaN(restaurantid)) {
+        if (isNaN(restaurantid) || restaurantid == 0) {
             getOrdersByUser()
         }
         else {

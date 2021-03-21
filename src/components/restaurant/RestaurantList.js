@@ -7,7 +7,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 
 export const RestaurantList = (props) => {
     const { restaurants, getRestaurants } = useContext(RestaurantContext)
-    const [currentRestaurant, setCurrentRestaurant] = useState("")
+    const [currentRestaurant, setCurrentRestaurant] = useState(0)
 
     // const restaurantid = parseInt(props.history.location.pathname.split("/")[3])
     // console.log("restaurantid", restaurantid)
@@ -17,7 +17,7 @@ export const RestaurantList = (props) => {
 
     }, [])
 
-
+    console.log("currentRestr", currentRestaurant)
     return (
         <>
             <section>
@@ -39,7 +39,7 @@ export const RestaurantList = (props) => {
                             <option value="0">Select a restaurant...</option>
                             {
                                 restaurants.map(r => (
-                                    <option key={r.id} value={`${r.name}/${r.id}`}>{r.name}</option>
+                                    <option key={r.id} value={r.id}>{r.name}</option>
                                 ))
                             }
                         </select>

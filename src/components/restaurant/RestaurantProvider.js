@@ -32,7 +32,7 @@ export const RestaurantProvider = (props) => {
 
 return (
     <RestaurantContext.Provider 
-    value={{ restaurants, restaurant, setRestaurants, getRestaurants, getRestaurantById}}>
+    value={{ restaurants, restaurant, setRestaurants, setRestaurant, getRestaurants, getRestaurantById}}>
         {props.children}
     </RestaurantContext.Provider>
 ) 
