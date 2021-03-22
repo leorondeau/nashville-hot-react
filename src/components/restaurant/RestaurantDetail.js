@@ -11,7 +11,7 @@ export const RestaurantDetail = (props) => {
     const restaurantid = parseInt(params.restaurantId)
 
     useEffect(() => {
-        if( restaurantid == 0) {
+        if( restaurantid === 0) {
             history.push("/")
         } 
         else {getRestaurantById(restaurantid)}
