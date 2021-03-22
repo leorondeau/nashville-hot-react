@@ -11,7 +11,6 @@ export const OrderForm = (props) => {
     const { getOrder, createOrder, editOrder, getOrdersByUser } = useContext(OrderContext)
     const params = useParams()
     const history = useHistory()
-    let isEnjoyable = ""
     const restaurantid = parseInt(params.restaurantId)
     const [currentRating, setCurrentRating] = useState(1)
     const [currentOrder, setCurrentOrder] = useState({
@@ -32,7 +31,7 @@ export const OrderForm = (props) => {
 
         if ("orderId" in props.match.params) {
             getOrder(params.orderId).then(order => {
-                debugger
+                
                 setCurrentOrder({
                     restaurantid: order.restaurant.id,
                     restaurantheatid: order.restaurantheat.id,
@@ -44,7 +43,9 @@ export const OrderForm = (props) => {
         }
     }, [params.orderId])
 
-  
+    console.log(params)
+
+
     
     
     const handleControlledInputChange = (event) => {
@@ -56,8 +57,8 @@ export const OrderForm = (props) => {
             newOrderState.enjoyable = false
         }
         setCurrentOrder(newOrderState)
-        console.log("currentOrder", currentOrder)
     }
+    
 
     const handleControlledInputRating = (event) => {
         const newRatingState = event.target.value
@@ -94,10 +95,14 @@ export const OrderForm = (props) => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="rating">Rate Heat {`${currentRating}`}</label>
-                    <input type="range" name="rating" min="1" max="10" required autoFocus className="form-control"
+                    {
+                        ("orderId" in params)
+                        ? <div></div>
+                        : <input type="range" name="rating" min="1" max="10" required autoFocus className="form-control"
                         defaultValue={currentRating}
                         onChange={handleControlledInputRating}
-                    />
+                        />
+                    }
                 </div>
             </fieldset>
             <fieldset>
@@ -110,7 +115,8 @@ export const OrderForm = (props) => {
                 </div>
             </fieldset>
             <fieldset>
-                <div>
+                <div> 
+                    <div>Enjoyable:</div>
                     <label htmlFor="enjoyable">Yes </label>
                     <input
                         type="radio"
@@ -135,13 +141,13 @@ export const OrderForm = (props) => {
 
                             editOrder({
                                 id: params.orderId,
-                                restaurant: parseInt(currentOrder.restaurantid),
-                                restaurantheat: currentOrder.restaurantheatid,
+                                restaurantId: parseInt(currentOrder.restaurantid),
+                                restaurantHeatId: currentOrder.restaurantheatid,
                                 note: currentOrder.note,
                                 enjoyable: currentOrder.enjoyable
                             })
                             
-                                .then(() => props.history.push("/"))
+                                .then(() => history.push("/"))
                         }}
                         className="btn btn-primary">Save</button>
                     : <button type="submit"
@@ -151,13 +157,13 @@ export const OrderForm = (props) => {
                             
                             const order = {
 
-                                restaurantId: parseInt(currentOrder.restaurantid),
+                                restaurantId: parseInt(restaurantid),
                                 restaurantHeatId: parseInt(currentOrder.restaurantheatid),
                                 note: currentOrder.note,
-                                enjoyable: isEnjoyable,
+                                enjoyable: currentOrder.enjoyable,
                                 createdDate: todayDate
                             }
-
+                            console.log(order)
                             const rating = {
                                 rating: currentRating
                             }                            
