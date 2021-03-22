@@ -48,7 +48,7 @@ export const OrderProvider = (props) => {
             // assigning the value to body. stringify takes a object as a param and returns a json string 
             body: JSON.stringify(order)
         })
-            .then(setOrders)
+            .then(getOrdersByUser)
     }
 
     const editOrder = (order) => {
@@ -65,7 +65,8 @@ export const OrderProvider = (props) => {
 
     return (
         <OrderContext.Provider
-            value={{ orders, setOrders, getOrder, createOrder, editOrder, getOrdersByUser, getOrdersByUserByRestaurantId }}>
+            value={{ orders, setOrders, getOrder, createOrder, 
+            editOrder, getOrdersByUser, getOrdersByUserByRestaurantId }}>
             {props.children}
         </OrderContext.Provider>
     )
