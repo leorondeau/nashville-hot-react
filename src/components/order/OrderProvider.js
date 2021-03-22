@@ -60,7 +60,7 @@ export const OrderProvider = (props) => {
             },
             body: JSON.stringify(order)
         })
-            .then(getOrdersByUserByRestaurantId)
+            .then(getOrdersByUser)
     }
 
     return (
