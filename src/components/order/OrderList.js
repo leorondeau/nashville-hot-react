@@ -24,7 +24,7 @@ export const OrderList = (props) => {
 
     }, [restaurantid])
 
-    console.log("orders", orders)
+    
 
     return (
         <>

@@ -1,5 +1,5 @@
 import React from 'react'
-import {useParams, useHistory} from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import "./Order.css"
 
@@ -7,7 +7,7 @@ export const Order = ({ order }) => {
 
     const params = useParams()
     const history = useHistory()
-
+    
     return (
         <>
             <section className="order">
@@ -25,10 +25,15 @@ export const Order = ({ order }) => {
                            </div>
                         }
                     </div>
-                    <button className="btn btn-3"
-                        onClick={e => history.push(`/orders/${order.id}/edit`)}
-                    >Edit</button>
-
+                    <div>
+                        {
+                            ("restaurantId" in params)
+                            ? <button className="btn btn-3"
+                            onClick={e => history.push(`/orders/${order.id}/edit`)}
+                            >Edit</button>
+                            : <div></div>
+                        }
+                    </div>
                 </div>
             </section>
         </>

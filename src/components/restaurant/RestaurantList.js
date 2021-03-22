@@ -17,12 +17,10 @@ export const RestaurantList = (props) => {
 
     }, [])
 
-    console.log("currentRestr", currentRestaurant)
+    
     return (
         <>
             <section>
-
-
                 <header className="restaurants__header restaurant">
                     <h4>Nashville Hot Restaurant</h4>
                 </header>
@@ -36,7 +34,7 @@ export const RestaurantList = (props) => {
                                 props.history.push(`/restaurant/${e.target.value}`)
                             }}
                         >
-                            <option value="0">Select a restaurant...</option>
+                            <option value="0" disabled selected>Select a restaurant...</option>
                             {
                                 restaurants.map(r => (
                                     <option key={r.id} value={r.id}>{r.name}</option>

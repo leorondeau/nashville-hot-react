@@ -16,7 +16,7 @@ export const OrderForm = (props) => {
     const [currentRating, setCurrentRating] = useState(1)
     const [currentOrder, setCurrentOrder] = useState({
 
-        restaurantid: restaurantid,
+        restaurantid: 0,
         restaurantheatid: 0,
         note: "",
         enjoyable: false
@@ -32,10 +32,10 @@ export const OrderForm = (props) => {
 
         if ("orderId" in props.match.params) {
             getOrder(params.orderId).then(order => {
-
+                debugger
                 setCurrentOrder({
-                    restaurantid: order.restaurantid,
-                    restaurantheatid: order.restaurantHeatId,
+                    restaurantid: order.restaurant.id,
+                    restaurantheatid: order.restaurantheat.id,
                     note: order.note,
                     enjoyable: order.enjoyable
                 })
@@ -44,17 +44,19 @@ export const OrderForm = (props) => {
         }
     }, [params.orderId])
 
-    if (currentOrder.enjoyable === "true") {
-        isEnjoyable = true
-    } else if (currentOrder.enjoyable ==="false") {
-        isEnjoyable = false
-    }
+  
     
-
+    
     const handleControlledInputChange = (event) => {
         const newOrderState = Object.assign({}, currentOrder)
         newOrderState[event.target.name] = event.target.value
+        if (newOrderState.enjoyable === "true") {
+            newOrderState.enjoyable = true
+        } else if (newOrderState.enjoyable ==="false") {
+            newOrderState.enjoyable = false
+        }
         setCurrentOrder(newOrderState)
+        console.log("currentOrder", currentOrder)
     }
 
     const handleControlledInputRating = (event) => {
@@ -78,8 +80,7 @@ export const OrderForm = (props) => {
                                     type="radio"
                                     name="restaurantheatid"
                                     checked={currentOrder.restaurantheatid == rh.id ? true : false}
-                                    value={rh.id}
-                                    
+                                    defaultValue={rh.id}                                    
                                     key={rh.id}
                                     onChange={handleControlledInputChange} />
 
@@ -114,13 +115,13 @@ export const OrderForm = (props) => {
                     <input
                         type="radio"
                         name="enjoyable"
-                        checked={currentOrder.enjoyable === "true"}
+                        checked={currentOrder.enjoyable === true}
                         value="true"
                         onChange={handleControlledInputChange}
                     />
                     <label htmlFor="enjoyable">No </label>
                     <input type="radio" name="enjoyable"
-                        checked={currentOrder.enjoyable === "false"} value="false"
+                        checked={currentOrder.enjoyable === false} value="false"
                         onChange={handleControlledInputChange}
                     />
                 </div>
@@ -134,15 +135,15 @@ export const OrderForm = (props) => {
 
                             editOrder({
                                 id: params.orderId,
-                                restaurantId: restaurantid,
-                                restaurantHeatid: currentOrder.restaurantheatid,
+                                restaurant: parseInt(currentOrder.restaurantid),
+                                restaurantheat: currentOrder.restaurantheatid,
                                 note: currentOrder.note,
                                 enjoyable: currentOrder.enjoyable
                             })
-
+                            
                                 .then(() => props.history.push("/"))
                         }}
-                        className="btn btn-primary">Edit</button>
+                        className="btn btn-primary">Save</button>
                     : <button type="submit"
                         onClick={evt => {
                             
@@ -150,7 +151,7 @@ export const OrderForm = (props) => {
                             
                             const order = {
 
-                                restaurantId: restaurantid,
+                                restaurantId: parseInt(currentOrder.restaurantid),
                                 restaurantHeatId: parseInt(currentOrder.restaurantheatid),
                                 note: currentOrder.note,
                                 enjoyable: isEnjoyable,
