@@ -4,8 +4,8 @@ export const OrderContext = React.createContext()
 
 export const OrderProvider = (props) => {
     const [orders, setOrders] = useState([])
-    // const [order, setOrder] = useState([])
-
+    
+    
     const getOrder = (id) => {
 
         return fetch(`http://localhost:8000/orders/${id}`, {
