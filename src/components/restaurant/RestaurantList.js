@@ -30,11 +30,12 @@ export const RestaurantList = (props) => {
                         <select type="dropdown" name="name" className="form-control"
                             value={currentRestaurant}
                             onChange={(e) => {
-                                setCurrentRestaurant(e.target.value)
+                                setCurrentRestaurant(parseInt(e.target.value))
                                 props.history.push(`/restaurant/${e.target.value}`)
+                                console.log("e.target.value", e.target.value)
                             }}
                         >
-                            <option value="0" disabled selected>Select a restaurant...</option>
+                            <option value="0" >Select a restaurant...</option>
                             {
                                 restaurants.map(r => (
                                     <option key={r.id} value={r.id}>{r.name}</option>
