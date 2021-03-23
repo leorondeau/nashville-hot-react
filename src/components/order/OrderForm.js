@@ -18,7 +18,8 @@ export const OrderForm = (props) => {
         restaurantid: 0,
         restaurantheatid: 0,
         note: "",
-        enjoyable: false
+        enjoyable: false,
+        rating: 0
     })
     const todayDate = new Date().toISOString().slice(0,10);
 
@@ -36,18 +37,15 @@ export const OrderForm = (props) => {
                     restaurantid: order.restaurant.id,
                     restaurantheatid: order.restaurantheat.id,
                     note: order.note,
-                    enjoyable: order.enjoyable
+                    enjoyable: order.enjoyable,
+                    rating: order.rating.rating
                 })
 
             })
         }
     }, [params.orderId])
-
-    console.log(params)
-
-
     
-    
+    console.log("props", props)
     const handleControlledInputChange = (event) => {
         const newOrderState = Object.assign({}, currentOrder)
         newOrderState[event.target.name] = event.target.value
@@ -58,12 +56,12 @@ export const OrderForm = (props) => {
         }
         setCurrentOrder(newOrderState)
     }
-    
+    console.log(params)
 
-    const handleControlledInputRating = (event) => {
-        const newRatingState = event.target.value
-        setCurrentRating(newRatingState)
-    }
+    // const handleControlledInputRating = (event) => {
+    //     const newRatingState = event.target.value
+    //     setCurrentRating(newRatingState)
+    // }
     
     
     return (
@@ -94,15 +92,12 @@ export const OrderForm = (props) => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="rating">Rate Heat {`${currentRating}`}</label>
-                    {
-                        ("orderId" in params)
-                        ? <div></div>
-                        : <input type="range" name="rating" min="1" max="10" required autoFocus className="form-control"
-                        defaultValue={currentRating}
-                        onChange={handleControlledInputRating}
+                    <label htmlFor="rating">Rate Heat {`${currentOrder.rating}`}</label>                        
+                        <input type="range" name="rating" min="1" max="10" required autoFocus className="form-control"
+                        value={currentOrder.rating}
+                        onChange={handleControlledInputChange}
                         />
-                    }
+                    
                 </div>
             </fieldset>
             <fieldset>
@@ -144,10 +139,11 @@ export const OrderForm = (props) => {
                                 restaurantId: parseInt(currentOrder.restaurantid),
                                 restaurantHeatId: currentOrder.restaurantheatid,
                                 note: currentOrder.note,
-                                enjoyable: currentOrder.enjoyable
+                                enjoyable: currentOrder.enjoyable,
+                                rating: currentOrder.rating
                             })
                             
-                                .then(() => history.push("/"))
+                                .then(() => history.push(`/`))
                         }}
                         className="btn btn-primary">Save</button>
                     : <button type="submit"
@@ -161,15 +157,12 @@ export const OrderForm = (props) => {
                                 restaurantHeatId: parseInt(currentOrder.restaurantheatid),
                                 note: currentOrder.note,
                                 enjoyable: currentOrder.enjoyable,
-                                createdDate: todayDate
-                            }
-                            console.log(order)
-                            const rating = {
-                                rating: currentRating
-                            }                            
+                                createdDate: todayDate,
+                                rating: parseInt(currentOrder.rating)
+                            }                                               
+                            
                             createOrder(order)
-                            .then(rateRestaurantHeat(order.restaurantHeatId, rating))
-                            .then(() => history.push("/"))
+                            .then(() => history.push(`/restaurant/${restaurantid}`))
                         }}
                         className="btn btn-primary">Create</button>
             }
