@@ -4,7 +4,7 @@ export const OrderContext = React.createContext()
 
 export const OrderProvider = (props) => {
     const [orders, setOrders] = useState([])
-    
+    // const {order , setOrder }
     
     const getOrder = (id) => {
 
@@ -63,9 +63,20 @@ export const OrderProvider = (props) => {
             .then(getOrdersByUser)
     }
 
+    const deleteOrder = (orderId) => {
+        return fetch(`http://localhost:8000/orders/${ orderId }`, {
+            method: "DELETE",
+            headers:{
+                "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`
+            }
+        })
+            
+            .then(getOrdersByUser)
+    }
+
     return (
         <OrderContext.Provider
-            value={{ orders, setOrders, getOrder, createOrder, 
+            value={{ orders, deleteOrder, setOrders, getOrder, createOrder, 
             editOrder, getOrdersByUser, getOrdersByUserByRestaurantId }}>
             {props.children}
         </OrderContext.Provider>
