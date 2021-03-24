@@ -19,7 +19,7 @@ export const OrderForm = (props) => {
         restaurantheatid: 0,
         note: "",
         enjoyable: false,
-        rating: 0
+        rating: 1
     })
     const todayDate = new Date().toISOString().slice(0,10);
 
@@ -140,7 +140,7 @@ export const OrderForm = (props) => {
                                 restaurantHeatId: currentOrder.restaurantheatid,
                                 note: currentOrder.note,
                                 enjoyable: currentOrder.enjoyable,
-                                rating: currentOrder.rating
+                                rating: parseInt(currentOrder.rating)
                             })
                             
                                 .then(() => history.push(`/`))
@@ -152,7 +152,6 @@ export const OrderForm = (props) => {
                             evt.preventDefault()
                             
                             const order = {
-
                                 restaurantId: parseInt(restaurantid),
                                 restaurantHeatId: parseInt(currentOrder.restaurantheatid),
                                 note: currentOrder.note,
@@ -162,7 +161,7 @@ export const OrderForm = (props) => {
                             }                                               
                             
                             createOrder(order)
-                            .then(() => history.push(`/restaurant/${restaurantid}`))
+                            .then(() => history.push(`/`))
                         }}
                         className="btn btn-primary">Create</button>
             }
