@@ -40,23 +40,11 @@ export const RestaurantHeatProvider = (props) => {
 
     }
     
-    const rateRestaurantHeat = (restaurantheatid, rating) => {
-        return fetch(`http://localhost:8000/restaurantheats/${restaurantheatid}/rate`, {
-            method: "POST",
-            headers: {
-                "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`,
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(rating)
-        })
-        .then(setRestaurantHeat)
-    }
 
 return (
     <RestaurantHeatContext.Provider 
     value={{ restaurantHeats, restaurantHeat, restaurantHeatByRestaurant, setRestaurantHeat, 
-    getRestaurantHeats, getRestaurantHeatById, getRestaurantHeatByRestaurantId, setRestaurantHeatByRestaurant,
-    rateRestaurantHeat }}>
+    getRestaurantHeats, getRestaurantHeatById, getRestaurantHeatByRestaurantId, setRestaurantHeatByRestaurant }}>
         {props.children}
     </RestaurantHeatContext.Provider>
 ) 
