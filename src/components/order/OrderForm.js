@@ -6,7 +6,6 @@ import { OrderContext } from './OrderProvider'
 
 
 export const OrderForm = (props) => {
-
     const { restaurantHeatByRestaurant, getRestaurantHeatByRestaurantId  } = useContext(RestaurantHeatContext)
     const { getOrder, createOrder, editOrder, getOrdersByUserByRestaurantId } = useContext(OrderContext)
     const params = useParams()
@@ -14,14 +13,26 @@ export const OrderForm = (props) => {
     const restaurantid = parseInt(params.restaurantId)
     
     const [currentOrder, setCurrentOrder] = useState({
-
         restaurantid: 0,
         restaurantheatid: 0,
         note: "",
         enjoyable: false,
         rating: 1
     })
+    const HandleReset = (()=>setCurrentOrder({        
+        restaurantid: 0,
+        restaurantheatid: 0,
+        note: "",
+        enjoyable: false,
+        rating: 1
+    }))
+    
+
+
     const todayDate = new Date().toISOString().slice(0,10);
+    // console.log("today", todayDate)
+    // const date = Date()
+    // console.log("date", date)
 
     useEffect(() => {
         if (isNaN(restaurantid)) {
@@ -69,7 +80,7 @@ export const OrderForm = (props) => {
     
     
     return (
-        <form className="orderForm">
+        <form className="orderForm" id="order-form">
             <h5 className="orderForm__title">What'd ya get?</h5>
             <fieldset>
                 {
@@ -147,7 +158,7 @@ export const OrderForm = (props) => {
                                 rating: parseInt(currentOrder.rating)
                             })
                             
-                                .then(() => history.push(`/`))
+                                .then(() => history.push(`/restaurant/${currentOrder.restaurantid}`))
                         }}
                         className="btn btn-primary">Save</button>
                     : <button type="submit"
@@ -165,7 +176,13 @@ export const OrderForm = (props) => {
                             }                                               
                             
                             createOrder(order)
-                            .then(getOrdersByUserByRestaurantId)
+                            .then(() => {
+                                getOrdersByUserByRestaurantId(restaurantid)
+                                .then(getRestaurantHeatByRestaurantId(restaurantid))
+                                .then(() => history.push(`/restaurant/${restaurantid}`))
+                                .then(HandleReset)
+                            })
+
                         }}
                         className="btn btn-primary">Create</button>
             }
