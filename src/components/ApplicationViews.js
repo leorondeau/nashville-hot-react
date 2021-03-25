@@ -4,11 +4,12 @@ import { RestaurantProvider } from "./restaurant/RestaurantProvider.js"
 import { RestaurantList } from './restaurant/RestaurantList'
 import { RestaurantDetail } from './restaurant/RestaurantDetail'
 import { RestaurantHeatProvider } from './restaurantheat/RestaurantHeatProvider'
-import { RestaurantHeatList } from "./restaurantheat/RestaurantHeatList.js"
+import { RestaurantHeatList } from "./restaurantheat/RestaurantHeatList"
 import { OrderProvider } from "./order/OrderProvider.js"
 import { OrderList } from './order/OrderList'
 import { OrderForm } from './order/OrderForm'
 import { Profile } from './profile/Profile'
+import { ProfileProvider } from "./profile/ProfileProvider"
 
 
 export const ApplicationViews = (props) => {
@@ -17,20 +18,22 @@ export const ApplicationViews = (props) => {
             margin: "5rem 2rem",
             backgroundColor: "lightgoldenrodyellow"
         }}> */}
-        <RestaurantProvider>
-            <RestaurantHeatProvider>
-                <OrderProvider>
-                    <Route exact path="/" render={(props) => {
-                        return <Profile {...props} />
-                    }}>
-                    </Route>
-                </OrderProvider>
-            </RestaurantHeatProvider>
-        </RestaurantProvider>
-        <RestaurantProvider>
-            <RestaurantHeatProvider>
-                <OrderProvider>
-                    
+        <ProfileProvider>
+            <RestaurantProvider>
+                <RestaurantHeatProvider>
+                    <OrderProvider>
+                        <Route exact path="/" render={(props) => {
+                            return <Profile {...props} />
+                        }}>
+                        </Route>
+                    </OrderProvider>
+                </RestaurantHeatProvider>
+            </RestaurantProvider>
+        </ProfileProvider>
+        <ProfileProvider>
+            <RestaurantProvider>
+                <RestaurantHeatProvider>
+                    <OrderProvider>
                         <Route path="/restaurant/:restaurantId(\d+)" render={(props) => {
                             return <>
                                 <div className="profile">
@@ -53,10 +56,11 @@ export const ApplicationViews = (props) => {
                             return <OrderForm {...props} />
                         }}>
                         </Route>
-                    
-                </OrderProvider>
-            </RestaurantHeatProvider>
-        </RestaurantProvider>
+
+                    </OrderProvider>
+                </RestaurantHeatProvider>
+            </RestaurantProvider>
+        </ProfileProvider>
 
         {/* </main> */}
     </>
