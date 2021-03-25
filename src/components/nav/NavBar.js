@@ -15,7 +15,7 @@ export const NavBar = (props) => {
                     props.history.push("/")
                 }
 
-                }>Reset Form</button>
+                }>Home</button>
             </li>
             {/* <li className="navbar__item">
                 Navigation link
