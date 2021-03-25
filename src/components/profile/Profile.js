@@ -4,12 +4,17 @@ import { OrderForm } from '../order/OrderForm'
 import { RestaurantList } from '../restaurant/RestaurantList'
 import { RestaurantDetail } from '../restaurant/RestaurantDetail'
 import { RestaurantHeatList } from '../restaurantheat/RestaurantHeatList'
+import { RestaurantHottestList } from '../restaurantheat/RestaurantHeatHottestList'
 import "./Profile.css"
 
 
 export const Profile = (props) => {
+    
+    // const { profile, getProfile } = useContext(ProfileContext)
 
-
+    // useEffect(() => {
+    //     getProfile()
+    // }, [])
 
     return (
         <>
@@ -20,11 +25,9 @@ export const Profile = (props) => {
                 </div>
                 <div className="profile__card">
                     < RestaurantList  {...props} />
-                    {/* <OrderForm {...props}/> */}
                 </div>
-                {/* <div className="profile__card">
-                    <RestaurantHeatList {...props} />
-                </div> */}
+                    < RestaurantHottestList {...props}/>
+                
             </div>
         </>
     )

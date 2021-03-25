@@ -27,6 +27,16 @@ export const OrderProvider = (props) => {
             .then(setOrders)
     }
 
+    const getLimitedOrdersByUser = () => {
+        return fetch("http://localhost:8000/orders?limit=5", {
+            headers: {
+                "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`
+            }
+        })
+            .then(response => response.json())
+            .then(setOrders)
+    }
+
     const getOrdersByUserByRestaurantId = (restaurantid) => {
         return fetch(`http://localhost:8000/orders?restaurantid=${restaurantid}`, {
             headers: {
@@ -48,7 +58,7 @@ export const OrderProvider = (props) => {
             // assigning the value to body. stringify takes a object as a param and returns a json string 
             body: JSON.stringify(order)
         })
-            .then(getOrdersByUser)
+        .then(getOrdersByUserByRestaurantId(order.restaurantId))
     }
 
     const editOrder = (order) => {
@@ -77,7 +87,7 @@ export const OrderProvider = (props) => {
     return (
         <OrderContext.Provider
             value={{ orders, deleteOrder, setOrders, getOrder, createOrder, 
-            editOrder, getOrdersByUser, getOrdersByUserByRestaurantId }}>
+            editOrder, getOrdersByUser, getOrdersByUserByRestaurantId, getLimitedOrdersByUser }}>
             {props.children}
         </OrderContext.Provider>
     )
