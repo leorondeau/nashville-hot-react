@@ -10,6 +10,9 @@ export const Register = (props) => {
     const password = React.createRef()
     const verifyPassword = React.createRef()
     const passwordDialog = React.createRef()
+    
+
+
 
     const handleRegister = (e) => {
         e.preventDefault()
@@ -43,7 +46,7 @@ export const Register = (props) => {
             passwordDialog.current.showModal()
         }
     }
-
+    
     return (
         <main style={{ textAlign: "center" }}>
 
@@ -76,7 +79,7 @@ export const Register = (props) => {
                 </fieldset>
                 <fieldset>
                     <label htmlFor="heatTolerance"> Heat Tolerance </label>
-                    <textarea ref={heatTolerance} name="heatTolerance" className="form-control" placeholder="1-100" />
+                    <input type="range" ref={heatTolerance} name="heatTolerance" className="form-control" min="1" max="10" />        
                 </fieldset>
                 <fieldset style={{
                     textAlign: "center"

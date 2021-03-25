@@ -19,5 +19,7 @@ img {
     padding: 10px
 }
 
-
+.restaurant__suggested_heat {
+    color: red;
+}
 

@@ -20,11 +20,11 @@ export const Profile = (props) => {
                 </div>
                 <div className="profile__card">
                     < RestaurantList  {...props} />
-                    <OrderForm {...props}/>
+                    {/* <OrderForm {...props}/> */}
                 </div>
-                <div className="profile__card">
+                {/* <div className="profile__card">
                     <RestaurantHeatList {...props} />
-                </div>
+                </div> */}
             </div>
         </>
     )

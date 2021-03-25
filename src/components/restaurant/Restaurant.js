@@ -10,6 +10,7 @@ export const Restaurant = ({ restaurant }) => {
                 <div className="restaurant__name" id={`restaurant--${restaurant.id}`}>
                    {restaurant.name}
                 </div>
+              
             </section>
         </>
     )

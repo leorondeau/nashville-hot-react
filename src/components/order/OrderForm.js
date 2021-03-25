@@ -7,12 +7,12 @@ import { OrderContext } from './OrderProvider'
 
 export const OrderForm = (props) => {
 
-    const { rateRestaurantHeat,restaurantHeatByRestaurant, getRestaurantHeatByRestaurantId } = useContext(RestaurantHeatContext)
-    const { getOrder, createOrder, editOrder, getOrdersByUser } = useContext(OrderContext)
+    const { restaurantHeatByRestaurant, getRestaurantHeatByRestaurantId  } = useContext(RestaurantHeatContext)
+    const { getOrder, createOrder, editOrder, getOrdersByUserByRestaurantId } = useContext(OrderContext)
     const params = useParams()
     const history = useHistory()
     const restaurantid = parseInt(params.restaurantId)
-    const [currentRating, setCurrentRating] = useState(1)
+    
     const [currentOrder, setCurrentOrder] = useState({
 
         restaurantid: 0,
@@ -44,8 +44,12 @@ export const OrderForm = (props) => {
             })
         }
     }, [params.orderId])
+
+    useEffect(() => {
+
+    },[getOrdersByUserByRestaurantId])
     
-    console.log("props", props)
+    
     const handleControlledInputChange = (event) => {
         const newOrderState = Object.assign({}, currentOrder)
         newOrderState[event.target.name] = event.target.value
@@ -56,7 +60,7 @@ export const OrderForm = (props) => {
         }
         setCurrentOrder(newOrderState)
     }
-    console.log(params)
+    
 
     // const handleControlledInputRating = (event) => {
     //     const newRatingState = event.target.value
@@ -161,7 +165,7 @@ export const OrderForm = (props) => {
                             }                                               
                             
                             createOrder(order)
-                            .then(() => history.push(`/`))
+                            .then(getOrdersByUserByRestaurantId)
                         }}
                         className="btn btn-primary">Create</button>
             }
