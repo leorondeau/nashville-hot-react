@@ -32,7 +32,7 @@ export const RestaurantList = (props) => {
                             onChange={(e) => {
                                 setCurrentRestaurant(parseInt(e.target.value))
                                 props.history.push(`/restaurant/${e.target.value}`)
-                                console.log("e.target.value", e.target.value)
+                                
                             }}
                         >
                             <option value="0" >Select a restaurant...</option>
