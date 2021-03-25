@@ -70,7 +70,7 @@ export const OrderProvider = (props) => {
             },
             body: JSON.stringify(order)
         })
-            .then(getOrdersByUser)
+        .then(getOrdersByUserByRestaurantId(order.restaurantId))
     }
 
     const deleteOrder = (orderId) => {
@@ -81,7 +81,7 @@ export const OrderProvider = (props) => {
             }
         })
             
-            .then(getOrdersByUser)
+        
     }
 
     return (

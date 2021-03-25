@@ -58,7 +58,7 @@ export const Order = ({ order }) => {
                                             deleteOrder(order.id)
                                             .then(getOrdersByUserByRestaurantId(restaurantid))
                                             .then(getRestaurantHeatByRestaurantId(restaurantid))
-                                                // .then(() => history.push(`/restaurant/${restaurantid}`))
+                                                
                                         }
                                     }}>Delete</button>
                             }
@@ -66,6 +66,11 @@ export const Order = ({ order }) => {
                     </div>
                 </div>
             </section>
+
+
         </>
     )
+
 }
+
+// .then(() => history.push(`/restaurant/${restaurantid}`)
