@@ -26,6 +26,7 @@ export const RestaurantDetail = (props) => {
                 <div >
                     <img src={`${restaurant.img}`} className="restaurant__img"></img>
                 </div>
+                <h5 className="restaurant__suggested_heat">{restaurant.suggested_heat}</h5>
             </div>
         </section>
     )
