@@ -4,7 +4,7 @@ export const RestaurantHeatContext = React.createContext()
 
 export const RestaurantHeatProvider = (props) => {
     const [restaurantHeats, setRestaurantHeats] = useState([])
-    const [restaurantHeat, setRestaurantHeat ] = useState({})
+    const [restaurantHeat, setRestaurantHeat ] = useState({restaurant:{name:{}}})
     const [restaurantHeatByRestaurant, setRestaurantHeatByRestaurant ] = useState([])
 
     const getRestaurantHeats = () => {
@@ -39,12 +39,23 @@ export const RestaurantHeatProvider = (props) => {
             .then(setRestaurantHeatByRestaurant)
 
     }
+
+    const getRestaurantHeatByHottest = () => {
+
+        return fetch(`http://localhost:8000/posts?sortby=hottest`, {
+            headers: {
+                "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`  
+            }
+        })
+            .then(response => response.json())
+            .then(setRestaurantHeats)
+    }
     
 
 return (
     <RestaurantHeatContext.Provider 
     value={{ restaurantHeats, restaurantHeat, restaurantHeatByRestaurant, setRestaurantHeat, 
-    getRestaurantHeats, getRestaurantHeatById, getRestaurantHeatByRestaurantId, setRestaurantHeatByRestaurant }}>
+    getRestaurantHeats, getRestaurantHeatById, getRestaurantHeatByHottest, getRestaurantHeatByRestaurantId, setRestaurantHeatByRestaurant }}>
         {props.children}
     </RestaurantHeatContext.Provider>
 ) 

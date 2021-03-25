@@ -4,3 +4,22 @@
 .order__not-enjoy {
     background-color: red;
 }
+
+.restaurant__customer {
+    display: flex;
+}
+
+.order__heat {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order__note {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order__actions {
+    display: flex;
+    justify-content: space-between;
+}
