@@ -40,14 +40,17 @@ export const ApplicationViews = (props) => {
                                     <div className="profile__card">
                                         < OrderList {...props} />
                                     </div>
-                                    <div className="profile__card">
-                                        < RestaurantList  {...props} />
-                                        <RestaurantDetail {...props} />
-                                        <OrderForm {...props} />
+                                    <div className="restaurant-outer">
+
+                                        <div className="profile__card restaurant__inner">
+                                            < RestaurantList  {...props} />
+                                            <RestaurantDetail {...props} />
+                                            <OrderForm {...props} />
+                                        </div>
                                     </div>
-                                    <div className="profile__card">
-                                        <RestaurantHeatList {...props} />
-                                    </div>
+                                        <div className="profile__card">
+                                            <RestaurantHeatList {...props} />
+                                        </div>
                                 </div>
                             </>
                         }}>

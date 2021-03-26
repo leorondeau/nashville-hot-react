@@ -7,7 +7,6 @@ export const RestaurantHeat = ({ restaurantheat }) => {
     const params = useParams()
     return (
         <>
-            <section className="restaurantheat">
                 <div>
                     {
                         ("restaurantId" in params)
@@ -15,6 +14,7 @@ export const RestaurantHeat = ({ restaurantheat }) => {
                         : <div>{restaurantheat.restaurant.name}</div>
                     }
                 </div>
+            <section className="restaurantheat">
                 <div className="restaurantheat__name" id={`restaurant--${restaurantheat.id}`}>{restaurantheat.name}</div>
                 <div>{restaurantheat.average_rating}</div>
             </section>

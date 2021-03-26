@@ -89,10 +89,11 @@ export const OrderForm = (props) => {
                         return (
                             // <ul style={{list-style-type:none}}>
 
-                            <li key={rh.id} >
+                            <li key={rh.id} className="radio-button" >
                                 <input
                                     type="radio"
                                     name="restaurantheatid"
+                                    className="radio-inner"
                                     checked={currentOrder.restaurantheatid == rh.id ? true : false}
                                     defaultValue={rh.id}                                    
                                     key={rh.id}
@@ -159,6 +160,8 @@ export const OrderForm = (props) => {
                             })
                             
                                 .then(() => history.push(`/restaurant/${currentOrder.restaurantid}`))
+                                .then(getOrdersByUserByRestaurantId(currentOrder.restaurantid))
+                                .then(getRestaurantHeatByRestaurantId(currentOrder.restaurantid))
                         }}
                         className="btn btn-primary">Save</button>
                     : <button type="submit"

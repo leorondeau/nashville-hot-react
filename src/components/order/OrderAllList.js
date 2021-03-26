@@ -6,41 +6,41 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import { ProfileContext } from '../profile/ProfileProvider'
 
 
-export const OrderList = (props) => {
+export const OrderAllList = (props) => {
     const { orders, setOrders, getOrdersByUser, getLimitedOrdersByUser, getOrdersByUserByRestaurantId } = useContext(OrderContext)
     const { profile, getProfile } = useContext(ProfileContext)
-    const [buttonClicked, setButtonClicked] = useState(true)
+    const [buttonClicked, setButtonClicked] = useState(false)
     const params = useParams()
     const history = useHistory()
     const restaurantid = parseInt(params.restaurantId)
 
 
-    useEffect(() => {
-        getProfile()
-    }, [])
-
-    useEffect(() => {
-        if (isNaN(restaurantid) || restaurantid == 0) {
-            getLimitedOrdersByUser()
-            // getOrdersByUser()
-     
-        }
-        else {
-            (getOrdersByUserByRestaurantId(restaurantid))
-        }
-
-        console.log("restId")
-    }, [restaurantid])
+    // useEffect(() => {
+    //     getProfile()
+    // }, [])
 
     // useEffect(() => {
-        
-    //     if(buttonClicked == true) {
+    //     if (isNaN(restaurantid) || restaurantid == 0) {
     //         getLimitedOrdersByUser()
-    //     } else {
-    //         getOrdersByUser()
+    //         // getOrdersByUser()
+     
     //     }
-    //     console.log("button")
-    //     },[buttonClicked])
+    //     else {
+    //         (getOrdersByUserByRestaurantId(restaurantid))
+    //     }
+
+    //     console.log("restId")
+    // }, [restaurantid])
+
+    useEffect(() => {
+        
+        if(buttonClicked == true) {
+            getOrdersByUser()
+        } else {
+            getLimitedOrdersByUser()
+        }
+        console.log("button")
+        },[buttonClicked])
   
    
 
@@ -63,11 +63,11 @@ export const OrderList = (props) => {
                     ))
                 }
                 
-                {/* <button onClick={e => {
+                <button onClick={e => {
                     buttonClicked ? setButtonClicked(false) :setButtonClicked(true)}
                 }> 
                 All Orders
-                </button> */}
+                </button>
             </section>
 
         </>
