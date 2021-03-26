@@ -1,10 +1,16 @@
 .order__enjoyed {
     background-color: green;
+    color: white;
 }
 .order__not-enjoy {
     background-color: red;
+    color: white;
+
 }
 
+.order__detail div {
+    padding: 2px 0;
+}
 .restaurant__customer {
     display: flex;
     justify-content: space-between;
@@ -23,4 +29,17 @@
 .order__actions {
     display: flex;
     justify-content: space-between;
+}
+
+.btn.btn-3 {
+    color: red;
+}
+
+.radio-button {
+    list-style: none;
+    
+}
+input[type=radio].radio-inner {
+    margin-right: 10px;
+
 }

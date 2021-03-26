@@ -1,4 +1,8 @@
 
+.restaurant__detail {
+    max-width: 200px;
+    max-height: 300px;
+}
 img {
     max-width:  200px;
     
@@ -21,5 +25,20 @@ img {
 
 .restaurant__suggested_heat {
     color: red;
+    text-transform: uppercase;
+    
+}
+
+.suggested-heat-wrapper {
+    display: flex;
+    /* padding: 1rem; */
+}
+
+.badass-flame {
+
+    height: 43px;
+    width: 47px;
+    margin: -10px;
+    margin-right: 10px;
 }
 
