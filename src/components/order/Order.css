@@ -1,10 +1,14 @@
 .order__enjoyed {
-    background-color: green;
+    border: solid green;
     color: white;
+    font: bold;
+    padding-left: 2rem;
 }
 .order__not-enjoy {
     background-color: red;
     color: white;
+    font: bold;
+    padding: 1rem;
 
 }
 
@@ -32,14 +36,31 @@
 }
 
 .btn.btn-3 {
-    color: red;
+    color: rgb(8, 8, 8);
 }
 
 .radio-button {
     list-style: none;
     
 }
+
 input[type=radio].radio-inner {
     margin-right: 10px;
 
+}
+.orderForm__title {
+    padding-top: .5rem;
+}
+/* .orderForm {
+    
+} */
+
+.btn {
+ background-color: red;
+
+}
+
+a {
+    color: red;
+    border-bottom: 2px red;
 }

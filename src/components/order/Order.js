@@ -55,10 +55,11 @@ export const Order = ({ order }) => {
                                 && <button className="btn btn-3"
                                     onClick={e => {
                                         if (window.confirm("Delete this order?")) {
-                                            deleteOrder(order.id)
+                                            deleteOrder(order.id, restaurantid)
+                                            
                                             .then(getOrdersByUserByRestaurantId(restaurantid))
                                             .then(getRestaurantHeatByRestaurantId(restaurantid))
-                                                
+                                            .then(() => history.push(`/restaurant/${restaurantid}`))  
                                         }
                                     }}>Delete</button>
                             }
