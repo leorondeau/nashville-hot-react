@@ -187,7 +187,7 @@ export const OrderForm = (props) => {
                             })
 
                         }}
-                        className="btn btn-primary">Create</button>
+                        className="btn">Create</button>
             }
 
         </form >

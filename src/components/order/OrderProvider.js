@@ -73,13 +73,14 @@ export const OrderProvider = (props) => {
         .then(getOrdersByUserByRestaurantId(order.restaurantId))
     }
 
-    const deleteOrder = (orderId) => {
+    const deleteOrder = (orderId, restaurantid) => {
         return fetch(`http://localhost:8000/orders/${ orderId }`, {
             method: "DELETE",
             headers:{
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`
             }
         })
+        .then(getOrdersByUserByRestaurantId(restaurantid))
             
         
     }

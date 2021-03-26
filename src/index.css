@@ -13,6 +13,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
   color: red;
+  font-size: 1.1rem;
 }
 
 code {
@@ -45,4 +46,10 @@ h3 {
 
 li {
   list-style: none;
+}
+
+.order-wrapper {
+  display: flex;
+  justify-content: center;
+  
 }

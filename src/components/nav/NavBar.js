@@ -10,24 +10,19 @@ export const NavBar = (props) => {
     return (
         <ul className="navbar">
             <li className="navbar__item">
-                <button className="nav-link" onClick={() => {
+                <button className="nav-link btn" onClick={() => {
 
                     props.history.push("/")
                 }
 
                 }>Home</button>
             </li>
-            {/* <li className="navbar__item">
-                Navigation link
-            </li>
-            <li className="navbar__item">
-                Navigation link
-            </li> */}
+            
             {
                 (localStorage.getItem("nashvillehot_token") !== null) ?
 
                     <li className="nav-item">
-                        <button className="nav-link fakeLink"
+                        <button className="nav-link fakeLink btn"
                             onClick={() => {
                                 localStorage.removeItem("nashvillehot_token")
                                 props.history.push({ pathname: "/" })

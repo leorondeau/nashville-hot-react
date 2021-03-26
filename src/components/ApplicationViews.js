@@ -48,15 +48,20 @@ export const ApplicationViews = (props) => {
                                             <OrderForm {...props} />
                                         </div>
                                     </div>
-                                        <div className="profile__card">
-                                            <RestaurantHeatList {...props} />
-                                        </div>
+                                    <div className="profile__card">
+                                        <RestaurantHeatList {...props} />
+                                    </div>
                                 </div>
                             </>
                         }}>
                         </Route>
+
                         <Route exact path="/orders/:orderId(\d+)/edit" render={(props) => {
-                            return <OrderForm {...props} />
+                            return <>
+                                <div className="order-wrapper">
+                                    <OrderForm {...props} />
+                                </div>
+                            </>
                         }}>
                         </Route>
 
