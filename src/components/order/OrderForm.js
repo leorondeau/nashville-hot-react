@@ -30,10 +30,7 @@ export const OrderForm = (props) => {
 
 
     const todayDate = new Date().toISOString().slice(0,10);
-    // console.log("today", todayDate)
-    // const date = Date()
-    // console.log("date", date)
-
+   
     useEffect(() => {
         if (isNaN(restaurantid)) {
         } else { getRestaurantHeatByRestaurantId(restaurantid) }
@@ -72,11 +69,6 @@ export const OrderForm = (props) => {
         setCurrentOrder(newOrderState)
     }
     
-
-    // const handleControlledInputRating = (event) => {
-    //     const newRatingState = event.target.value
-    //     setCurrentRating(newRatingState)
-    // }
     
     
     return (
