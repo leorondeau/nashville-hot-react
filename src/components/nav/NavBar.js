@@ -10,12 +10,9 @@ export const NavBar = (props) => {
     return (
         <ul className="navbar">
             <li className="navbar__item">
-                <button className="nav-link btn" onClick={() => {
+              
 
-                    props.history.push("/")
-                }
-
-                }>Home</button>
+               <Link to="/" className="navbar__title"> Nashville Hot Heat Index</Link>
             </li>
             
             {
