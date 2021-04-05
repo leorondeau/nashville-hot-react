@@ -22,7 +22,7 @@ export const RestaurantList = (props) => {
         <>
             <section>
                 <header className="restaurants__header restaurant">
-                    <h4>Nashville Hot Restaurant</h4>
+                    <h4>Nashville Hot Restaurants</h4>
                 </header>
                 <fieldset>
                     <div className="restaurants">
