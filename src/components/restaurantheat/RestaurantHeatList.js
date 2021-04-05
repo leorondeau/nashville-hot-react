@@ -27,7 +27,7 @@ export const RestaurantHeatList = (props) => {
         <>
             <section>
                 <header className="restaurants__header restaurant">
-                    <h4>Nashville Hot Average</h4>
+                    <h4>Averages</h4>
                 </header>
                 <div>
                     {
