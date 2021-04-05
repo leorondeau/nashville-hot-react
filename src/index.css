@@ -53,3 +53,15 @@ li {
   justify-content: center;
   
 }
+
+.navbar__title {
+  font-family: 'Acme', sans-serif;
+}
+
+@media (max-width: 375px) {
+  .profile {
+    display: none;
+    
+  }
+}
+
