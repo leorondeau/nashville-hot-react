@@ -9,7 +9,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 
 export const RestaurantHeatList = (props) => {
     const { restaurantHeatByRestaurant, getRestaurantHeatByRestaurantId } = useContext(RestaurantHeatContext)
-    // const [currentRestaurant, setCurrentRestaurant] = useState("")
+    const [value, setValue] = useState(true)
     const params = useParams()
     const history = useHistory()
 
@@ -29,7 +29,10 @@ export const RestaurantHeatList = (props) => {
                 <header className="restaurants__header restaurant">
                     <h4>Nashville Hot Average</h4>
                 </header>
-                <div>
+                <button className="mobile__button" onClick={() => {
+                    setValue(!value)}}>Nashville Hot Average</button>
+                    
+                <div className={value ? "orderlist-hide" : null}>
                     {
                         restaurantHeatByRestaurant.map(rh => (
                             <RestaurantHeat key={rh.id} restaurantheat={rh} />))

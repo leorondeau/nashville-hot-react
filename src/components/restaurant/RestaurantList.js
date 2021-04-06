@@ -1,17 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { RestaurantContext } from './RestaurantProvider'
+import { useParams, useHistory, } from 'react-router-dom'
 
-import Dropdown from 'react-bootstrap/Dropdown'
 
 
 
 export const RestaurantList = (props) => {
     const { restaurants, getRestaurants } = useContext(RestaurantContext)
     const [currentRestaurant, setCurrentRestaurant] = useState(0)
-
-    // const restaurantid = parseInt(props.history.location.pathname.split("/")[3])
-    // console.log("restaurantid", restaurantid)
-
+    const params = useParams()
+ 
     useEffect(() => {
         getRestaurants()
 
@@ -21,9 +19,14 @@ export const RestaurantList = (props) => {
     return (
         <>
             <section>
-                <header className="restaurants__header restaurant">
-                    <h4>Nashville Hot Restaurant</h4>
+                <header className="restaurant">
+                    {
+                        ("restaurantId" in params && window.outerWidth <= 375)
+                        ? null
+                        :<h4>Nashville Hot Restaurants</h4>
+                    }
                 </header>
+                
                 <fieldset>
                     <div className="restaurants">
                         <label htmlFor="name"> </label>

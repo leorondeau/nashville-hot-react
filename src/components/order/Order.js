@@ -57,9 +57,9 @@ export const Order = ({ order }) => {
                                         if (window.confirm("Delete this order?")) {
                                             deleteOrder(order.id, restaurantid)
                                             
+                                            .then(() => history.push(`/restaurant/${restaurantid}`))  
                                             .then(getOrdersByUserByRestaurantId(restaurantid))
                                             .then(getRestaurantHeatByRestaurantId(restaurantid))
-                                            .then(() => history.push(`/restaurant/${restaurantid}`))  
                                         }
                                     }}>Delete</button>
                             }

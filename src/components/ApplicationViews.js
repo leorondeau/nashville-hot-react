@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Route } from "react-router-dom"
 import { RestaurantProvider } from "./restaurant/RestaurantProvider.js"
 import { RestaurantList } from './restaurant/RestaurantList'
@@ -13,6 +13,8 @@ import { ProfileProvider } from "./profile/ProfileProvider"
 
 
 export const ApplicationViews = (props) => {
+    const [value, setValue] = useState(false)
+
     return <>
         {/* <main style={{
             margin: "5rem 2rem",
@@ -41,8 +43,11 @@ export const ApplicationViews = (props) => {
                                         < OrderList {...props} />
                                     </div>
                                     <div className="restaurant-outer">
+                                        <button className="mobile__button" onClick={() => {
+                                            setValue(!value)
+                                        }}>Nashville Hot Restaurants</button>
 
-                                        <div className="profile__card restaurant__inner">
+                                        <div className={`profile__card restaurant__inner ${value ? "orderlist-hide" : null}`}>
                                             < RestaurantList  {...props} />
                                             <RestaurantDetail {...props} />
                                             <OrderForm {...props} />

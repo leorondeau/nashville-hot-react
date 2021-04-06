@@ -10,7 +10,7 @@ export const RestaurantHeat = ({ restaurantheat }) => {
                 <div>
                     {
                         ("restaurantId" in params)
-                        ? <div></div>
+                        ? null
                         : <div>{restaurantheat.restaurant.name}</div>
                     }
                 </div>

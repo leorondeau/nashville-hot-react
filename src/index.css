@@ -42,6 +42,7 @@ h3 {
 }
 .restaurant-inner {
   max-width: 300px;
+  margin: 1px;
 }
 
 li {
@@ -52,4 +53,68 @@ li {
   display: flex;
   justify-content: center;
   
+}
+
+.navbar__title {
+  font-family: 'Acme', sans-serif;
+}
+
+.mobile__button {
+  display: none;
+}
+
+
+
+@media (max-width: 500px) {
+  .profile {
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    /* max-width: 1229px; */
+    justify-content: space-evenly;
+    margin: 0 auto;
+  }
+
+}
+
+@media (max-width: 375px) {
+  .profile {
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+    /* max-width: 1229px; */
+    justify-content: space-evenly;
+    margin: 0 auto;
+  }
+
+  .restaurants__header {
+    display: none;
+  }
+
+  .orderlist {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mobile__button {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 3rem;
+    border: none;
+    font-family: 'Acme', sans-serif;
+    color: red;
+    background-color: black;
+    padding: 0;
+    font-size: 2rem;
+
+  }
+
+  .orderlist-hide {
+    display: none;
+  }
+  
+
+
+
 }
