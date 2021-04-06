@@ -32,6 +32,8 @@ img {
 .suggested-heat-wrapper {
     display: flex;
     /* padding: 1rem; */
+    margin: 1px;
+
 }
 
 .badass-flame {
