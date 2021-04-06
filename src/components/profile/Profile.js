@@ -1,4 +1,4 @@
-import React, {useEffect, useContext} from 'react'
+import React, { useEffect, useContext } from 'react'
 import { OrderList } from '../order/OrderList'
 import { OrderForm } from '../order/OrderForm'
 import { RestaurantList } from '../restaurant/RestaurantList'
@@ -9,7 +9,7 @@ import "./Profile.css"
 
 
 export const Profile = (props) => {
-    
+
     // const { profile, getProfile } = useContext(ProfileContext)
 
     // useEffect(() => {
@@ -18,7 +18,7 @@ export const Profile = (props) => {
 
     return (
         <>
-        
+
             <div className="profile">
                 <div className="profile__card">
                     < OrderList {...props} />
@@ -26,8 +26,8 @@ export const Profile = (props) => {
                 <div className="profile__card">
                     < RestaurantList  {...props} />
                 </div>
-                    < RestaurantHottestList {...props}/>
-                
+                < RestaurantHottestList {...props} />
+
             </div>
         </>
     )
