@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import {useSpring, animated} from 'react-spring'
 import { useParams, useHistory } from 'react-router-dom'
 import { OrderContext } from './OrderProvider'
 import { Order } from './Order'
@@ -10,7 +11,7 @@ export const OrderList = (props) => {
     const { orders, setOrders, getOrdersByUser, getLimitedOrdersByUser, getOrdersByUserByRestaurantId } = useContext(OrderContext)
     const { profile, getProfile } = useContext(ProfileContext)
  
-    const [value, setValue] = useState(false)
+    const [value, setValue] = useState(true)
     const params = useParams()
     const history = useHistory()
     const restaurantid = parseInt(params.restaurantId)
@@ -32,19 +33,16 @@ export const OrderList = (props) => {
         
     }, [restaurantid])
 
- 
-
-
-    // useEffect(() => {
-
-    //     if(buttonClicked == true) {
-    //         getLimitedOrdersByUser()
-    //     } else {
-    //         getOrdersByUser()
-    //     }
-    //     console.log("button")
-    //     },[buttonClicked])
-
+    const SpringIn = ({ children }) => {
+        // const AnimatedOrderList = styled(animated.orderlist-hide)
+        const props = useSpring({
+          opacity: 1,
+          from: { opacity: 0 },
+          config: { mass: 10, tension: 10, friction: 10 }
+        });
+        return <animated.div style={props}>{children}</animated.div>;
+      };
+    console.log(props)
 
 
     return (
@@ -55,10 +53,12 @@ export const OrderList = (props) => {
                 <header className="restaurants__header restaurant">
                     <h4>Nashville Hot Visits</h4>
                 </header>
-                <button className="mobile__button" onClick={setValue}>
+                <button className="mobile__button" onClick={() => {
+                    setValue(!value)}}>
+
                 Nashville Hot Visits
                 </button>
-                <div className={value ? "orderlist-hide" : "orderlist"}>
+               <SpringIn> <div className={value ? "orderlist-hide" : null}>
 
                     <div className="restaurant__customer">
                         <h5>{profile.customer.user.first_name}</h5>
@@ -71,12 +71,8 @@ export const OrderList = (props) => {
                         ))
                     }
 
-                </div>
-                {/* <button onClick={e => {
-                    buttonClicked ? setButtonClicked(false) :setButtonClicked(true)}
-                }> 
-                All Orders
-                </button> */}
+                </div></SpringIn>
+                
             </section>
 
         </>
