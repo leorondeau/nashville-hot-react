@@ -58,7 +58,7 @@ export const OrderList = (props) => {
 
                 Nashville Hot Visits
                 </button>
-               <SpringIn> <div className={value ? "orderlist-hide" : null}>
+               <div className={value ? "orderlist-hide" : null}>
 
                     <div className="restaurant__customer">
                         <h5>{profile.customer.user.first_name}</h5>
@@ -71,7 +71,7 @@ export const OrderList = (props) => {
                         ))
                     }
 
-                </div></SpringIn>
+                </div>
                 
             </section>
 
