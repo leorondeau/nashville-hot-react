@@ -42,6 +42,7 @@ h3 {
 }
 .restaurant-inner {
   max-width: 300px;
+  margin: 1px;
 }
 
 li {
@@ -113,6 +114,7 @@ li {
     display: none;
   }
   
+
 
 
 }
