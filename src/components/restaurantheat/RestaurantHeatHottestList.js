@@ -9,13 +9,11 @@ import Dropdown from 'react-bootstrap/Dropdown'
 
 export const RestaurantHottestList = (props) => {
     const { restaurantHeats, getRestaurantHeats } = useContext(RestaurantHeatContext)
-    // const [currentRestaurant, setCurrentRestaurant] = useState("")
+    const [value, setValue] = useState(true)
     const params = useParams()
     const history = useHistory()
 
 
-    // const restaurantid = parseInt(props.history.location.pathname.split("/")[3])
-    // const restaurantid = parseInt(params.restaurantId)
 
     useEffect(() => {
         getRestaurantHeats()
@@ -29,11 +27,13 @@ export const RestaurantHottestList = (props) => {
                 <header className="restaurants__header restaurant">
                     <h4>Nashville's Hottest</h4>
                 </header>
-                <div>
+                <button className="mobile__button" onClick={() => {
+                    setValue(!value)}}>Nashville's Hottest</button>                
+
+                <div className={value ? "orderlist-hide" : null}>
                     {
                         topFive.map(rh => (
                             <RestaurantHeat key={rh.id} restaurantheat={rh} />))
-
                     }
                 </div>
             </section>
