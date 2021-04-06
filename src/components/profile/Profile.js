@@ -23,7 +23,7 @@ export const Profile = (props) => {
                 <div className="profile__card">
                     < OrderList {...props} />
                 </div>
-                <div className="profile__card">
+                <div className="profile__card profile__restaurant-list">
                     < RestaurantList  {...props} />
                 </div>
                 < RestaurantHottestList {...props} />
