@@ -18,7 +18,7 @@ Along with this repository, you will need to clone the [nashville-hot-index](htt
 
 ```sh
 git clone git@github.com:leorondeau/nashville-hot-react.git
-cd client
+
 ```
 
 2. Access the data by following the instructions found here:
@@ -34,13 +34,15 @@ cd client
 
 #### Demo User Credentials
 
+  
+Please register an account and start rating! There is no verification required and no data will be shared or used for any purposes other than including your ratings and giving you the best advice on your Hot Chicken journey.
+
+If you just want to snoop around, use the following:
+
 <p>
 Username: <i>me@me.com</i>
 <br>
 Password: <i>me</i>
-  
-If you wish to create an account there is no verification required and no data will be shared or used for any purposes other than including your ratings and giving you the best advice on your Hot Chicken journey.
-
 
 
 <a href="https://github.com/leorondeau" target="_blank"><img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white" alt="Leo Rondeau GitHub" style="height: auto !important;width: auto !important;" /></a> <a href="https://www.linkedin.com/in/leo-rondeau/" target="_blank"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="Leo Rondeau LinkedIn" style="height: auto !important;width: auto !important;" /></a>
