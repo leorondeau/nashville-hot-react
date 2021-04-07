@@ -18,7 +18,7 @@ Along with this repository, you will need to clone the [nashville-hot-index](htt
 
 ```sh
 git clone git@github.com:leorondeau/nashville-hot-react.git
-
+cd nashville-hot-react
 ```
 
 2. Access the data by following the instructions found here:
