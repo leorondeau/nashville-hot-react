@@ -92,15 +92,19 @@ li {
 
   .mobile__button {
     display: flex;
+    display: inline-block;
     flex-direction: column;
+    box-sizing: content-box;
     width: 100%;
     height: 3rem;
-    border: none;
+    border: 1px solid red;
     font-family: "Acme", sans-serif;
     color: red;
     background-color: black;
     padding: 0;
     font-size: 2rem;
+    margin: 0;
+    
   }
 
   .orderlist-hide {
