@@ -98,12 +98,15 @@ li {
     width: 100%;
     height: 3rem;
     border: 1px solid red;
+    border-radius: 5px;
     font-family: "Acme", sans-serif;
     color: red;
     background-color: black;
-    padding: 0;
+    padding: 8px 10px;
+    margin: 5px 4px 10px 0;
     font-size: 2rem;
-    margin: 0;
+    
+
     
   }
 
