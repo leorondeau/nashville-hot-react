@@ -5,6 +5,10 @@ import { RestaurantHeatContext } from '../restaurantheat/RestaurantHeatProvider'
 import { Link } from 'react-router-dom'
 import "./Order.css"
 
+// Called in OrderAllList.js and OrderList.js
+// Individual order card with ternaries that render props based on if a restaurant has been selected or not.
+// On login the most recent 5 orders render when a restaurant is selected the orders for that restaurant render.
+
 export const Order = ({ order }) => {
     const { deleteOrder, getOrdersByUserByRestaurantId } = useContext(OrderContext)
     const {  getRestaurantHeatByRestaurantId  } = useContext(RestaurantHeatContext)
@@ -17,6 +21,7 @@ export const Order = ({ order }) => {
         <>
             <section className="order">
                 <div className="order__detail" id={`order--${order.id}`}>
+                    
                     <div>
                         {
                             ("restaurantId" in params)
@@ -34,6 +39,7 @@ export const Order = ({ order }) => {
                         <div>{order.note}</div>
                     </div>
                     <div>
+                        {/*  */}
                         {
                             order.enjoyable
                                 ? <div className="order__enjoyed">Yes</div>
