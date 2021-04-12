@@ -5,6 +5,7 @@ import { Order } from './Order'
 import Dropdown from 'react-bootstrap/Dropdown'
 import { ProfileContext } from '../profile/ProfileProvider'
 
+// Currently unused but will allow users to see all their Orders on home page.
 
 export const OrderAllList = (props) => {
     const { orders, setOrders, getOrdersByUser, getLimitedOrdersByUser, getOrdersByUserByRestaurantId } = useContext(OrderContext)
@@ -14,23 +15,6 @@ export const OrderAllList = (props) => {
     const history = useHistory()
     const restaurantid = parseInt(params.restaurantId)
 
-
-    // useEffect(() => {
-    //     getProfile()
-    // }, [])
-
-    // useEffect(() => {
-    //     if (isNaN(restaurantid) || restaurantid == 0) {
-    //         getLimitedOrdersByUser()
-    //         // getOrdersByUser()
-     
-    //     }
-    //     else {
-    //         (getOrdersByUserByRestaurantId(restaurantid))
-    //     }
-
-    //     console.log("restId")
-    // }, [restaurantid])
 
     useEffect(() => {
         
