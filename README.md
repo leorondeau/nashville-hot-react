@@ -23,7 +23,7 @@ cd nashville-hot-react
 
 2. Access the data by following the instructions found here:
 
-<a href="https://github.com/leorondeau/nashville-hot-index" target="_blank"><img src="https://img.shields.io/badge/server repo%20-%2375120e.svg?&style=for-the-badge&&logoColor=white" alt="read_aloud-server" style="height: auto !important; width: auto !important;" /></a>
+<a href="https://github.com/leorondeau/nashville-hot-index" target="_blank"><img src="https://img.shields.io/badge/server repo%20-%2375120e.svg?&style=for-the-badge&&logoColor=white" alt="nashville-hot-index" style="height: auto !important; width: auto !important;" /></a>
 
 3. Launch the client.
 
