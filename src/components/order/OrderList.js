@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import {useSpring, animated} from 'react-spring'
+import { useSpring, animated } from 'react-spring'
 import { useParams, useHistory } from 'react-router-dom'
 import { OrderContext } from './OrderProvider'
 import { Order } from './Order'
@@ -10,7 +10,7 @@ import { ProfileContext } from '../profile/ProfileProvider'
 export const OrderList = (props) => {
     const { orders, setOrders, getOrdersByUser, getLimitedOrdersByUser, getOrdersByUserByRestaurantId } = useContext(OrderContext)
     const { profile, getProfile } = useContext(ProfileContext)
- 
+
     const [value, setValue] = useState(true)
     const params = useParams()
     const history = useHistory()
@@ -30,18 +30,18 @@ export const OrderList = (props) => {
             (getOrdersByUserByRestaurantId(restaurantid))
         }
 
-        
+
     }, [restaurantid])
 
     const SpringIn = ({ children }) => {
         // const AnimatedOrderList = styled(animated.orderlist-hide)
         const props = useSpring({
-          opacity: 1,
-          from: { opacity: 0 },
-          config: { mass: 10, tension: 10, friction: 10 }
+            opacity: 1,
+            from: { opacity: 0 },
+            config: { mass: 10, tension: 10, friction: 10 }
         });
         return <animated.div style={props}>{children}</animated.div>;
-      };
+    };
     console.log(props)
 
 
@@ -54,11 +54,12 @@ export const OrderList = (props) => {
                     <h4>Nashville Hot Visits</h4>
                 </header>
                 <button className="mobile__button" onClick={() => {
-                    setValue(!value)}}>
+                    setValue(!value)
+                }}>
 
-                Nashville Hot Visits
+                    Nashville Hot Visits
                 </button>
-               <div className={value ? "orderlist-hide" : null}>
+                <div className={value ? "orderlist-hide" : null}>
 
                     <div className="restaurant__customer">
                         <h5>{profile.customer.user.first_name}</h5>
@@ -72,7 +73,7 @@ export const OrderList = (props) => {
                     }
 
                 </div>
-                
+
             </section>
 
         </>
