@@ -2,10 +2,15 @@ import React, { useState } from 'react'
 
 export const OrderContext = React.createContext()
 
+/* 
+    All client http calls to server regarding orders are
+    contained in this module 
+*/
+
 export const OrderProvider = (props) => {
     const [orders, setOrders] = useState([])
-    // const {order , setOrder }
-    
+
+
     const getOrder = (id) => {
 
         return fetch(`http://localhost:8000/orders/${id}`, {
@@ -58,7 +63,7 @@ export const OrderProvider = (props) => {
             // assigning the value to body. stringify takes a object as a param and returns a json string 
             body: JSON.stringify(order)
         })
-        .then(getOrdersByUserByRestaurantId(order.restaurantId))
+            .then(getOrdersByUserByRestaurantId(order.restaurantId))
     }
 
     const editOrder = (order) => {
@@ -70,25 +75,27 @@ export const OrderProvider = (props) => {
             },
             body: JSON.stringify(order)
         })
-        .then(getOrdersByUserByRestaurantId(order.restaurantId))
+            .then(getOrdersByUserByRestaurantId(order.restaurantId))
     }
 
     const deleteOrder = (orderId, restaurantid) => {
-        return fetch(`http://localhost:8000/orders/${ orderId }`, {
+        return fetch(`http://localhost:8000/orders/${orderId}`, {
             method: "DELETE",
-            headers:{
+            headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`
             }
         })
-        .then(getOrdersByUserByRestaurantId(restaurantid))
-            
-        
+            .then(getOrdersByUserByRestaurantId(restaurantid))
+
+
     }
 
     return (
         <OrderContext.Provider
-            value={{ orders, deleteOrder, setOrders, getOrder, createOrder, 
-            editOrder, getOrdersByUser, getOrdersByUserByRestaurantId, getLimitedOrdersByUser }}>
+            value={{
+                orders, deleteOrder, setOrders, getOrder, createOrder,
+                editOrder, getOrdersByUser, getOrdersByUserByRestaurantId, getLimitedOrdersByUser
+            }}>
             {props.children}
         </OrderContext.Provider>
     )
