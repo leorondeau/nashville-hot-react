@@ -7,14 +7,13 @@ import { RestaurantHeatList } from '../restaurantheat/RestaurantHeatList'
 import { RestaurantHottestList } from '../restaurantheat/RestaurantHeatHottestList'
 import "./Profile.css"
 
+/* 
+    Rendered on log in and when Nashville Hot Heat Index (home)
+    is clicked.
+*/
+
 
 export const Profile = (props) => {
-
-    // const { profile, getProfile } = useContext(ProfileContext)
-
-    // useEffect(() => {
-    //     getProfile()
-    // }, [])
 
     return (
         <>

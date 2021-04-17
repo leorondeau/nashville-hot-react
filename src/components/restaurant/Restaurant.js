@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+/*
+    Called in RestaurantList.js to be rendered in dropdown
+*/
 
 export const Restaurant = ({ restaurant }) => {
 

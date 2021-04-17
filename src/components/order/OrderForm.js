@@ -3,15 +3,21 @@ import { useParams, useHistory } from 'react-router-dom'
 import { RestaurantHeatContext } from '../restaurantheat/RestaurantHeatProvider'
 import { OrderContext } from './OrderProvider'
 
+/* 
+    Form for users to enter their order information i.e. 
+    heat selection, their heat rating, note, enjoyable or not. 
+    This form renders after a restaurant has been selected 
+    and will have specific data for that restaurant. 
+*/
 
 
 export const OrderForm = (props) => {
-    const { restaurantHeatByRestaurant, getRestaurantHeatByRestaurantId  } = useContext(RestaurantHeatContext)
+    const { restaurantHeatByRestaurant, getRestaurantHeatByRestaurantId } = useContext(RestaurantHeatContext)
     const { getOrder, createOrder, editOrder, getOrdersByUserByRestaurantId } = useContext(OrderContext)
     const params = useParams()
     const history = useHistory()
     const restaurantid = parseInt(params.restaurantId)
-    
+
     const [currentOrder, setCurrentOrder] = useState({
         restaurantid: 0,
         restaurantheatid: 0,
@@ -19,18 +25,18 @@ export const OrderForm = (props) => {
         enjoyable: false,
         rating: 1
     })
-    const HandleReset = (()=>setCurrentOrder({        
+    const HandleReset = (() => setCurrentOrder({
         restaurantid: 0,
         restaurantheatid: 0,
         note: "",
         enjoyable: false,
         rating: 1
     }))
-    
 
 
-    const todayDate = new Date().toISOString().slice(0,10);
-   
+
+    const todayDate = new Date().toISOString().slice(0, 10);
+
     useEffect(() => {
         if (isNaN(restaurantid)) {
         } else { getRestaurantHeatByRestaurantId(restaurantid) }
@@ -40,7 +46,7 @@ export const OrderForm = (props) => {
 
         if ("orderId" in props.match.params) {
             getOrder(params.orderId).then(order => {
-                
+
                 setCurrentOrder({
                     restaurantid: order.restaurant.id,
                     restaurantheatid: order.restaurantheat.id,
@@ -55,29 +61,29 @@ export const OrderForm = (props) => {
 
     useEffect(() => {
 
-    },[getOrdersByUserByRestaurantId])
-    
-    
+    }, [getOrdersByUserByRestaurantId])
+
+
     const handleControlledInputChange = (event) => {
         const newOrderState = Object.assign({}, currentOrder)
         newOrderState[event.target.name] = event.target.value
         if (newOrderState.enjoyable === "true") {
             newOrderState.enjoyable = true
-        } else if (newOrderState.enjoyable ==="false") {
+        } else if (newOrderState.enjoyable === "false") {
             newOrderState.enjoyable = false
         }
         setCurrentOrder(newOrderState)
     }
-    
-    
-    
+
+
+
     return (
         <form className="orderForm" id="order-form">
             <h5 className="orderForm__title">What'd ya get?</h5>
             <fieldset>
                 {
                     restaurantHeatByRestaurant.map(rh => {
-                        
+
                         return (
                             // <ul style={{list-style-type:none}}>
 
@@ -87,7 +93,7 @@ export const OrderForm = (props) => {
                                     name="restaurantheatid"
                                     className="radio-inner"
                                     checked={currentOrder.restaurantheatid == rh.id ? true : false}
-                                    defaultValue={rh.id}                                    
+                                    defaultValue={rh.id}
                                     key={rh.id}
                                     onChange={handleControlledInputChange} />
 
@@ -100,12 +106,12 @@ export const OrderForm = (props) => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="rating">Rate Heat {`${currentOrder.rating}`}</label>                        
-                        <input type="range" name="rating" min="1" max="10" required autoFocus className="form-control"
+                    <label htmlFor="rating">Rate Heat {`${currentOrder.rating}`}</label>
+                    <input type="range" name="rating" min="1" max="10" required autoFocus className="form-control"
                         value={currentOrder.rating}
                         onChange={handleControlledInputChange}
-                        />
-                    
+                    />
+
                 </div>
             </fieldset>
             <fieldset>
@@ -118,7 +124,7 @@ export const OrderForm = (props) => {
                 </div>
             </fieldset>
             <fieldset>
-                <div> 
+                <div>
                     <div>Enjoyable:</div>
                     <label htmlFor="enjoyable">Yes </label>
                     <input
@@ -139,7 +145,7 @@ export const OrderForm = (props) => {
                 ("orderId" in props.match.params)
                     ? <button
                         onClick={evt => {
-                            
+
                             evt.preventDefault()
 
                             editOrder({
@@ -150,7 +156,7 @@ export const OrderForm = (props) => {
                                 enjoyable: currentOrder.enjoyable,
                                 rating: parseInt(currentOrder.rating)
                             })
-                            
+
                                 .then(() => history.push(`/restaurant/${currentOrder.restaurantid}`))
                                 .then(getOrdersByUserByRestaurantId(currentOrder.restaurantid))
                                 .then(getRestaurantHeatByRestaurantId(currentOrder.restaurantid))
@@ -158,9 +164,9 @@ export const OrderForm = (props) => {
                         className="btn btn-primary">Save</button>
                     : <button type="submit"
                         onClick={evt => {
-                            
+
                             evt.preventDefault()
-                            
+
                             const order = {
                                 restaurantId: parseInt(restaurantid),
                                 restaurantHeatId: parseInt(currentOrder.restaurantheatid),
@@ -168,15 +174,15 @@ export const OrderForm = (props) => {
                                 enjoyable: currentOrder.enjoyable,
                                 createdDate: todayDate,
                                 rating: parseInt(currentOrder.rating)
-                            }                                               
-                            
+                            }
+
                             createOrder(order)
-                            .then(() => {
-                                getOrdersByUserByRestaurantId(restaurantid)
-                                .then(getRestaurantHeatByRestaurantId(restaurantid))
-                                .then(() => history.push(`/restaurant/${restaurantid}`))
-                                .then(HandleReset)
-                            })
+                                .then(() => {
+                                    getOrdersByUserByRestaurantId(restaurantid)
+                                        .then(getRestaurantHeatByRestaurantId(restaurantid))
+                                        .then(() => history.push(`/restaurant/${restaurantid}`))
+                                        .then(HandleReset)
+                                })
 
                         }}
                         className="btn">Create</button>

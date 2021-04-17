@@ -77,6 +77,7 @@ export const Register = (props) => {
                     <label htmlFor="verifyPassword"> Verify Password </label>
                     <input ref={verifyPassword} type="password" name="verifyPassword" className="form-control" placeholder="Verify password" required />
                 </fieldset>
+                {/* User can select heat tolerance with range slider */}
                 <fieldset>
                     <label htmlFor="heatTolerance"> Heat Tolerance </label>
                     <input type="range" ref={heatTolerance} name="heatTolerance" className="form-control" min="1" max="10" />        

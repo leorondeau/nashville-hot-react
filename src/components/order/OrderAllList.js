@@ -5,6 +5,9 @@ import { Order } from './Order'
 import Dropdown from 'react-bootstrap/Dropdown'
 import { ProfileContext } from '../profile/ProfileProvider'
 
+/* 
+    Currently unused but will allow users to see all their Orders on home page.
+*/
 
 export const OrderAllList = (props) => {
     const { orders, setOrders, getOrdersByUser, getLimitedOrdersByUser, getOrdersByUserByRestaurantId } = useContext(OrderContext)
@@ -15,34 +18,17 @@ export const OrderAllList = (props) => {
     const restaurantid = parseInt(params.restaurantId)
 
 
-    // useEffect(() => {
-    //     getProfile()
-    // }, [])
-
-    // useEffect(() => {
-    //     if (isNaN(restaurantid) || restaurantid == 0) {
-    //         getLimitedOrdersByUser()
-    //         // getOrdersByUser()
-     
-    //     }
-    //     else {
-    //         (getOrdersByUserByRestaurantId(restaurantid))
-    //     }
-
-    //     console.log("restId")
-    // }, [restaurantid])
-
     useEffect(() => {
-        
-        if(buttonClicked == true) {
+
+        if (buttonClicked == true) {
             getOrdersByUser()
         } else {
             getLimitedOrdersByUser()
         }
         console.log("button")
-        },[buttonClicked])
-  
-   
+    }, [buttonClicked])
+
+
 
     return (
         <>
@@ -62,11 +48,12 @@ export const OrderAllList = (props) => {
                         <Order key={o.id} value={o.id} order={o} />
                     ))
                 }
-                
+
                 <button onClick={e => {
-                    buttonClicked ? setButtonClicked(false) :setButtonClicked(true)}
-                }> 
-                All Orders
+                    buttonClicked ? setButtonClicked(false) : setButtonClicked(true)
+                }
+                }>
+                    All Orders
                 </button>
             </section>
 
