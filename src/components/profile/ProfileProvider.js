@@ -2,12 +2,14 @@ import React, { useState } from "react"
 
 export const ProfileContext = React.createContext()
 
+/* 
+    All client http calls to server regarding user name and 
+    heat tolerance are
+    contained in this module 
+*/
+
 export const ProfileProvider = (props) => {
-    /*
-        Must profile a default value for the `events` property
-        so that React doesn't throw an error when you try to
-        iterate the events array in the view.
-    */
+  
     const [profile, setProfile] = useState({ customer:{user:{}}, heat_tolerance: {}})
 
     const getProfile = () => {
