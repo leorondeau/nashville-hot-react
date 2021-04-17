@@ -5,6 +5,11 @@ import "./Restaurant.css"
 import "../profile/Profile.css"
 import flaming from "./flaming.gif"
 
+/*
+    Renders the details of a restaurant once selected from the dropdown
+    as well as the heat suggestion for user for from selected restaurant
+*/
+
 export const RestaurantDetail = (props) => {
     const { restaurant, getRestaurantById } = useContext(RestaurantContext)
     const params = useParams()
