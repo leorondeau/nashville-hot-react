@@ -3,6 +3,8 @@ import { useParams, useHistory } from 'react-router-dom'
 import { RestaurantHeatContext } from '../restaurantheat/RestaurantHeatProvider'
 import { OrderContext } from './OrderProvider'
 
+// Form for users to enter their order information. This form renders after a restaurant has been selected
+// and will have specific data for that restaurant.
 
 
 export const OrderForm = (props) => {
