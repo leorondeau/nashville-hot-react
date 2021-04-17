@@ -9,9 +9,9 @@ body {
   background-color: black;
   color: red;
   font-size: 1.1rem;
-  overflow-y: scroll;
-  position:relative;
-  height: 100%;
+  /* overflow-y: scroll;
+  position:relative; */
+  /* height: 100%; */
 }
 
 code {
@@ -60,7 +60,7 @@ li {
   display: none;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 750px) {
   .profile {
     display: flex;
     flex-direction: column;
