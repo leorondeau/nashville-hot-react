@@ -3,8 +3,7 @@ import React, { useState } from 'react'
 export const OrderContext = React.createContext()
 
 /* 
-    All client http calls to server regarding orders are
-    contained in this module 
+    HTTP requests to server that query Order table 
 */
 
 export const OrderProvider = (props) => {

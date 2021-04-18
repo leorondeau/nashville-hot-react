@@ -7,7 +7,7 @@ import flaming from "./flaming.gif"
 
 /*
     Renders the details of a restaurant once selected from the dropdown
-    as well as the heat suggestion for user for from selected restaurant
+    as well as the heat suggestion for user from the selected restaurant
 */
 
 export const RestaurantDetail = (props) => {

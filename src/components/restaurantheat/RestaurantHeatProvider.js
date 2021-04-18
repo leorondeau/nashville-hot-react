@@ -2,6 +2,11 @@ import React, { useState } from 'react'
 
 export const RestaurantHeatContext = React.createContext()
 
+/* 
+    HTTP requests to the server that query the RestaurantHeat table
+*/
+
+
 export const RestaurantHeatProvider = (props) => {
     const [restaurantHeats, setRestaurantHeats] = useState([])
     const [restaurantHeat, setRestaurantHeat ] = useState({restaurant:{name:{}}})

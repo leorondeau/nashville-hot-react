@@ -5,6 +5,10 @@ import { RestaurantHeat } from './RestaurantHeat'
 import "./RestaurantHeat.css"
 import Dropdown from 'react-bootstrap/Dropdown'
 
+/* 
+    Lists averages for selected restaurant heat names when
+    restaurant is selected
+*/
 
 
 export const RestaurantHeatList = (props) => {
@@ -31,7 +35,7 @@ export const RestaurantHeatList = (props) => {
                 </header>
                 <button className="mobile__button" onClick={() => {
                     setValue(!value)}}>Nashville Hot Average</button>
-                    
+
                 <div className={value ? "orderlist-hide" : null}>
                     {
                         restaurantHeatByRestaurant.map(rh => (
