@@ -32,10 +32,10 @@ export const RestaurantHottestList = (props) => {
                 <button className="mobile__button" onClick={() => {
                     setValue(!value)}}>Nashville's Hottest</button>                
 
-                <div className={value ? "orderlist-hide" : null}>
+                <div className={value ? "orderlist-hide" : null} >
                     {
                         topFive.map(rh => (
-                            <RestaurantHeat key={rh.id} restaurantheat={rh} />))
+                            <RestaurantHeat key={rh.id} restaurantheat={rh} className="restaurant__hottest"/>))
                     }
                 </div>
             </section>
