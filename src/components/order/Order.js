@@ -39,19 +39,19 @@ export const Order = ({ order }) => {
                     <div className="order__heat">
 
                         <div >Ordered:</div>
-                        <div>{order.restaurantheat.name}</div>
+                        <div className="order__heat-name">{order.restaurantheat.name}</div>
                     </div>
                     <div className="order__note">
                         <div >Note:</div>
-                        <div>{order.note}</div>
+                        <div className="order__note-name">{order.note}</div>
                     </div>
                     <div className="order__enjoyable">
                         {/*  */}
                         <div>Enjoyable:</div>
                         {
                             order.enjoyable
-                                ? <div className="order__enjoyed">Yes!</div>
-                                : <div className="order__not-enjoy">No!</div>
+                                ? <div className="order__enjoyed">Yes</div>
+                                : <div className="order__not-enjoy">No</div>
                         }
                     </div>
                     <div className="order__actions">
@@ -66,7 +66,7 @@ export const Order = ({ order }) => {
                         <div>
                             {
                                 ("restaurantId" in params)
-                                && <button className="btn btn-3"
+                                && <button className="btn btn-3" content="like" icon="like"
                                     onClick={e => {
                                         if (window.confirm("Delete this order?")) {
                                             deleteOrder(order.id, restaurantid)
@@ -76,7 +76,9 @@ export const Order = ({ order }) => {
                                                 .then(getRestaurantHeatByRestaurantId(restaurantid))
                                         }
                                     }}>Delete</button>
+                                    
                             }
+                            
                         </div>
                     </div>
                 </div>
@@ -88,4 +90,3 @@ export const Order = ({ order }) => {
 
 }
 
-// .then(() => history.push(`/restaurant/${restaurantid}`)
