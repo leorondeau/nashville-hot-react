@@ -3,7 +3,10 @@ import { useParams, useHistory } from 'react-router-dom'
 import { OrderContext } from './OrderProvider'
 import { RestaurantHeatContext } from '../restaurantheat/RestaurantHeatProvider'
 import { Link } from 'react-router-dom'
+import pencil from "./pencil.svg"
+import trash from "./trash.svg"
 import "./Order.css"
+
 
 /*
     Called in OrderAllList.js and OrderList.js
@@ -19,10 +22,10 @@ export const Order = ({ order }) => {
 
     const restaurantid = parseInt(params.restaurantId)
 
-    useEffect(() => {
-        getOrdersByUserByRestaurantId(restaurantid)
+    // useEffect(() => {
+    //     getOrdersByUserByRestaurantId(restaurantid)
 
-    },[restaurantHeat])
+    // },[restaurantHeat])
 
     return (
         <>
@@ -58,15 +61,15 @@ export const Order = ({ order }) => {
                         <div>
                             {
                                 ("restaurantId" in params)
-                                && <button className="btn btn-3"
+                                && <img src={pencil} className="btn btn-3"
                                     onClick={e => history.push(`/orders/${order.id}/edit`)}
-                                >Edit</button>
+                                ></img>
                             }
                         </div>
                         <div>
                             {
                                 ("restaurantId" in params)
-                                && <button className="btn btn-3" content="like" icon="like"
+                                && <img src={trash} className="btn btn-3" 
                                     onClick={e => {
                                         if (window.confirm("Delete this order?")) {
                                             deleteOrder(order.id, restaurantid)
@@ -75,9 +78,10 @@ export const Order = ({ order }) => {
                                                 .then(getOrdersByUserByRestaurantId(restaurantid))
                                                 .then(getRestaurantHeatByRestaurantId(restaurantid))
                                         }
-                                    }}>Delete</button>
+                                    }}></img>
                                     
                             }
+                            
                             
                         </div>
                     </div>
