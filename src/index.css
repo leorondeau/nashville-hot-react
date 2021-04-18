@@ -9,8 +9,8 @@ body {
   background-color: black;
   color: red;
   font-size: 1.1rem;
-  /* overflow-y: scroll;
-  position:relative; */
+  overflow-y: scroll;
+  position:relative;
   /* height: 100%; */
 }
 
