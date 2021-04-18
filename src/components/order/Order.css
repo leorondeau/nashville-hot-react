@@ -7,6 +7,7 @@
 
 .order__name {
     font-size: 1.5rem;
+    color: orange;
 }
 
 .order__enjoyed {
@@ -30,6 +31,7 @@
 .restaurant__customer {
     display: flex;
     justify-content: space-between;
+    color: orange;
 }
 
 .order__heat {
