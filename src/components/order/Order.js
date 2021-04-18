@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import { useParams, useHistory, } from 'react-router-dom'
+import React, { useContext, useEffect } from 'react'
+import { useParams, useHistory } from 'react-router-dom'
 import { OrderContext } from './OrderProvider'
 import { RestaurantHeatContext } from '../restaurantheat/RestaurantHeatProvider'
 import { Link } from 'react-router-dom'
@@ -12,12 +12,17 @@ import "./Order.css"
 */
 
 export const Order = ({ order }) => {
-    const { deleteOrder, getOrdersByUserByRestaurantId } = useContext(OrderContext)
-    const { getRestaurantHeatByRestaurantId } = useContext(RestaurantHeatContext)
+    const { orders, deleteOrder, getOrdersByUserByRestaurantId } = useContext(OrderContext)
+    const { restaurantHeat, getRestaurantHeatByRestaurantId } = useContext(RestaurantHeatContext)
     const params = useParams()
     const history = useHistory()
 
     const restaurantid = parseInt(params.restaurantId)
+
+    useEffect(() => {
+        getOrdersByUserByRestaurantId(restaurantid)
+
+    },[restaurantHeat])
 
     return (
         <>
@@ -66,7 +71,7 @@ export const Order = ({ order }) => {
                                         if (window.confirm("Delete this order?")) {
                                             deleteOrder(order.id, restaurantid)
 
-                                                .then(() => history.push(`/restaurant/${restaurantid}`))
+                                                .then(history.push(`/restaurant/${restaurantid}`))
                                                 .then(getOrdersByUserByRestaurantId(restaurantid))
                                                 .then(getRestaurantHeatByRestaurantId(restaurantid))
                                         }
