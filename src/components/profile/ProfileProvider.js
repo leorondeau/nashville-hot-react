@@ -3,9 +3,7 @@ import React, { useState } from "react"
 export const ProfileContext = React.createContext()
 
 /* 
-    All client http calls to server regarding user name and 
-    heat tolerance are
-    contained in this module 
+   HTTP requests to server that query User-Customer table 
 */
 
 export const ProfileProvider = (props) => {

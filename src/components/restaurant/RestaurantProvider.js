@@ -2,6 +2,11 @@ import React, { useState } from 'react'
 
 export const RestaurantContext = React.createContext()
 
+/* 
+    HTTP requests to the server that query the Restaurant table
+*/
+
+
 export const RestaurantProvider = (props) => {
     const [restaurants, setRestaurants] = useState([])
     const [restaurant, setRestaurant ] = useState({})

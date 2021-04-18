@@ -5,7 +5,9 @@ import { RestaurantHeat } from './RestaurantHeat'
 import "./RestaurantHeat.css"
 import Dropdown from 'react-bootstrap/Dropdown'
 
-
+/*
+    Renders the overall hottest average heats on log in
+*/
 
 export const RestaurantHottestList = (props) => {
     const { restaurantHeats, getRestaurantHeats } = useContext(RestaurantHeatContext)

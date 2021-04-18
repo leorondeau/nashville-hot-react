@@ -2,6 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useParams, useHistory } from 'react-router-dom'
 
+/*
+    Restaurant heat card that renders average rating in 
+    RestaurantHeatList.js (when restaurant is selected) and 
+    RestaurantHeatHottestList.js (on log in)
+*/
+
 
 export const RestaurantHeat = ({ restaurantheat }) => {
     const params = useParams()

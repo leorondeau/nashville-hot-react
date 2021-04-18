@@ -1,16 +1,28 @@
+.order {
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: .5rem;
+    margin: 1rem 0 1rem 0;
+}
+
+.order__name {
+    font-size: 1.5rem;
+}
+
 .order__enjoyed {
-    border: solid green;
-    color: white;
+    /* border: solid green; */
+    /* color: white; */
     font: bold;
     padding-left: 2rem;
 }
 .order__not-enjoy {
-    background-color: red;
-    color: white;
+    /* background-color: red; */
+    /* color: white; */
     font: bold;
     padding: 1rem;
 
 }
+
 
 .order__detail div {
     padding: 2px 0;
@@ -26,6 +38,11 @@
 }
 
 .order__note {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order__enjoyable {
     display: flex;
     justify-content: space-between;
 }

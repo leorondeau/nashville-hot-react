@@ -3,7 +3,9 @@ import { RestaurantContext } from './RestaurantProvider'
 import { useParams, useHistory, } from 'react-router-dom'
 
 
-
+/* 
+    List the restaurants in a dropdown. Rendered on log in.
+*/
 
 export const RestaurantList = (props) => {
     const { restaurants, getRestaurants } = useContext(RestaurantContext)
