@@ -40,12 +40,13 @@ export const Order = ({ order }) => {
                         <div >Note:</div>
                         <div>{order.note}</div>
                     </div>
-                    <div>
+                    <div className="order__enjoyable">
                         {/*  */}
+                        <div>Enjoyable:</div>
                         {
                             order.enjoyable
-                                ? <div className="order__enjoyed">Yes</div>
-                                : <div className="order__not-enjoy">No</div>
+                                ? <div className="order__enjoyed">Yes!</div>
+                                : <div className="order__not-enjoy">No!</div>
                         }
                     </div>
                     <div className="order__actions">
