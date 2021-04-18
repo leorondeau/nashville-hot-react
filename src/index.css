@@ -19,10 +19,6 @@ code {
     monospace;
 }
 
-/* .restaurant {
-  border: solid greenyellow;
-} */
-
 h4 {
   border-bottom: solid 2px;
   font-family: "Acme", sans-serif;
@@ -64,8 +60,6 @@ li {
   .profile {
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
-    /* max-width: 1229px; */
     justify-content: space-evenly;
     margin: 0 auto;
   }
@@ -75,8 +69,6 @@ li {
   .profile {
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
-    /* max-width: 1229px; */
     justify-content: space-evenly;
     margin: 0 auto;
   }
