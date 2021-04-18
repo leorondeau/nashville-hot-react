@@ -13,7 +13,7 @@ export const RestaurantHeat = ({ restaurantheat }) => {
     const params = useParams()
     return (
         <>
-                <div>
+                <div className="restaurant__hottest">
                     {
                         ("restaurantId" in params)
                         ? null
