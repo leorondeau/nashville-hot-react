@@ -1,9 +1,14 @@
 .restaurantheat {
     display: flex;
     justify-content: space-between;
+    color: orange;
+    text-transform: uppercase;
 }
 
 .restaurant__detail {
     margin-bottom: 2.5rem;
 }
 
+.restaurant__hottest {
+    color: rgb(255, 0, 0);
+}
