@@ -19,7 +19,7 @@ export const NavBar = (props) => {
                 (localStorage.getItem("nashvillehot_token") !== null) ?
 
                     <li className="nav-item">
-                        <button className="nav-link fakeLink btn"
+                        <button className="nav-link fakeLink btn bt-logout"
                             onClick={() => {
                                 localStorage.removeItem("nashvillehot_token")
                                 props.history.push({ pathname: "/" })

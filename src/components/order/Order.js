@@ -3,7 +3,10 @@ import { useParams, useHistory } from 'react-router-dom'
 import { OrderContext } from './OrderProvider'
 import { RestaurantHeatContext } from '../restaurantheat/RestaurantHeatProvider'
 import { Link } from 'react-router-dom'
+import pencil from "./pencil.svg"
+import trash from "./trash.svg"
 import "./Order.css"
+
 
 /*
     Called in OrderAllList.js and OrderList.js
@@ -19,10 +22,10 @@ export const Order = ({ order }) => {
 
     const restaurantid = parseInt(params.restaurantId)
 
-    useEffect(() => {
-        getOrdersByUserByRestaurantId(restaurantid)
+    // useEffect(() => {
+    //     getOrdersByUserByRestaurantId(restaurantid)
 
-    },[restaurantHeat])
+    // },[restaurantHeat])
 
     return (
         <>
@@ -39,34 +42,34 @@ export const Order = ({ order }) => {
                     <div className="order__heat">
 
                         <div >Ordered:</div>
-                        <div>{order.restaurantheat.name}</div>
+                        <div className="order__heat-name">{order.restaurantheat.name}</div>
                     </div>
                     <div className="order__note">
                         <div >Note:</div>
-                        <div>{order.note}</div>
+                        <div className="order__note-name">{order.note}</div>
                     </div>
                     <div className="order__enjoyable">
                         {/*  */}
                         <div>Enjoyable:</div>
                         {
                             order.enjoyable
-                                ? <div className="order__enjoyed">Yes!</div>
-                                : <div className="order__not-enjoy">No!</div>
+                                ? <div className="order__enjoyed">Yes</div>
+                                : <div className="order__not-enjoy">No</div>
                         }
                     </div>
                     <div className="order__actions">
                         <div>
                             {
                                 ("restaurantId" in params)
-                                && <button className="btn btn-3"
+                                && <img src={pencil} className="btn btn-3"
                                     onClick={e => history.push(`/orders/${order.id}/edit`)}
-                                >Edit</button>
+                                ></img>
                             }
                         </div>
                         <div>
                             {
                                 ("restaurantId" in params)
-                                && <button className="btn btn-3"
+                                && <img src={trash} className="btn btn-3" 
                                     onClick={e => {
                                         if (window.confirm("Delete this order?")) {
                                             deleteOrder(order.id, restaurantid)
@@ -75,8 +78,11 @@ export const Order = ({ order }) => {
                                                 .then(getOrdersByUserByRestaurantId(restaurantid))
                                                 .then(getRestaurantHeatByRestaurantId(restaurantid))
                                         }
-                                    }}>Delete</button>
+                                    }}></img>
+                                    
                             }
+                            
+                            
                         </div>
                     </div>
                 </div>
@@ -88,4 +94,3 @@ export const Order = ({ order }) => {
 
 }
 
-// .then(() => history.push(`/restaurant/${restaurantid}`)

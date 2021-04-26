@@ -106,7 +106,7 @@ export const OrderForm = (props) => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="rating">Rate Heat {`${currentOrder.rating}`}</label>
+                    <label htmlFor="rating">Heat Level Rating {`${currentOrder.rating}`}</label>
                     <input type="range" name="rating" min="1" max="10" required autoFocus className="form-control"
                         value={currentOrder.rating}
                         onChange={handleControlledInputChange}
@@ -126,7 +126,7 @@ export const OrderForm = (props) => {
             <fieldset>
                 <div>
                     <div>Enjoyable:</div>
-                    <label htmlFor="enjoyable">Yes </label>
+                    <label htmlFor="enjoyable" className="order__form-enjoybale">Yes </label>
                     <input
                         type="radio"
                         name="enjoyable"
@@ -134,7 +134,7 @@ export const OrderForm = (props) => {
                         value="true"
                         onChange={handleControlledInputChange}
                     />
-                    <label htmlFor="enjoyable">No </label>
+                    <label htmlFor="enjoyable" className="order__form-enjoybale">No </label>
                     <input type="radio" name="enjoyable"
                         checked={currentOrder.enjoyable === false} value="false"
                         onChange={handleControlledInputChange}
