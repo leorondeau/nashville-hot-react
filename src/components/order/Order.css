@@ -1,14 +1,18 @@
 .order {
-  border: 1px solid red;
-  border-radius: 5px;
+  /* border: 1px solid red; */
+  border-top: 1px solid red;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  /* border-radius: 5px; */
   padding: 0.5rem;
   margin: 1rem 0 1rem 0;
 }
-
+ß
 .order__name {
   font-size: 1.5rem;
   color: red;
-  border-bottom: 1px solid red;
+  /* border-bottom: 1px solid red; */
 }
 
 .order__enjoyed {
@@ -69,9 +73,9 @@
 }
 
 .order__form-enjoybale {
-    color: orange;
-    padding: .25rem .25rem 0 0;
-    margin: 0 .25rem 0 .5rem;
+  color: orange;
+  padding: 0.25rem 0.25rem 0 0;
+  margin: 0 0.25rem 0 0.5rem;
 }
 
 input[type="radio"].radio-inner {
