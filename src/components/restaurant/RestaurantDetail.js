@@ -32,7 +32,7 @@ export const RestaurantDetail = (props) => {
                 <div className="image">
 
                     <div >
-                        <img src={`${restaurant.img}`} className="restaurant__img"></img>
+                        {/* <img src={`${restaurant.img}`} className="restaurant__img"></img> */}
                     </div>
                 </div>
                 <h5>Heat Suggestion:</h5>
