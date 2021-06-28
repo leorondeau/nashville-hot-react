@@ -4,6 +4,7 @@ import { RestaurantContext } from './RestaurantProvider'
 import "./Restaurant.css"
 import "../profile/Profile.css"
 import flaming from "./flaming.gif"
+import boltons from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/boltons.png'
 
 /*
     Renders the details of a restaurant once selected from the dropdown
@@ -22,17 +23,17 @@ export const RestaurantDetail = (props) => {
         }
         else { getRestaurantById(restaurantid) }
     }, [restaurantid])
-
+    console.log('restaurant', restaurant)   
     return (
         <section className="restaurant ">
             <div className="restaurant__detail">
                 <div className="restaurant__website">
-                    <a href={restaurant.website} >{restaurant.website}</a>
+                    <a href={restaurant.img} >{restaurant.website}</a>
                 </div>
                 <div className="image">
 
                     <div >
-                        {/* <img src={`${restaurant.img}`} className="restaurant__img"></img> */}
+                        <img src={restaurant.img} className="restaurant__img"></img>
                     </div>
                 </div>
                 <h5>Heat Suggestion:</h5>
