@@ -19,7 +19,8 @@ import partyfowl from '/Users/admin/workspace/nashvillehotindexreact/src/images/
 import pepperfire from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/pepperfire.webp'
 import scoreboard from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/scoreboard.webp'
 import southernv from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/southernv.webp'
-
+import bjs from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/bjs.png'
+import behive from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/behive.png'
 
 
 /*
@@ -32,8 +33,7 @@ export const RestaurantDetail = (props) => {
     const params = useParams()
     const history = useHistory()
     const restaurantid = parseInt(params.restaurantId)
-    const image = moores
- console.log("image", image)
+ 
     
     useEffect(() => {
         if (restaurantid === 0) {history.push("/")}
