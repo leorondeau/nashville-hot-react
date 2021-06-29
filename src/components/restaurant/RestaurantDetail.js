@@ -34,12 +34,11 @@ export const RestaurantDetail = (props) => {
     const history = useHistory()
     const restaurantid = parseInt(params.restaurantId)
  
-    
     useEffect(() => {
         if (restaurantid === 0) {history.push("/")}
         else { getRestaurantById(restaurantid) }
     }, [restaurantid])
-    console.log('restaurant', restaurant)   
+     
     return (
         <section className="restaurant ">
             <div className="restaurant__detail">
