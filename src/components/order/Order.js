@@ -22,10 +22,11 @@ export const Order = ({ order }) => {
 
     const restaurantid = parseInt(params.restaurantId)
 
-    // useEffect(() => {
-    //     getOrdersByUserByRestaurantId(restaurantid)
+    useEffect(() => {
+        if (isNaN(restaurantid)){
+        } else {getOrdersByUserByRestaurantId(restaurantid)}
 
-    // },[restaurantHeat])
+    },[restaurantHeat])
 
     return (
         <>
