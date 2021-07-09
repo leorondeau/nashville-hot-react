@@ -12,7 +12,7 @@ export const RestaurantProvider = (props) => {
     const [restaurant, setRestaurant ] = useState({})
 
     const getRestaurants = () => {
-        return fetch("http://localhost:8000/restaurants", {
+        return fetch("http://0.0.0.0:5000/restaurants", {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`  
             }
