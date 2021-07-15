@@ -12,7 +12,7 @@ export const OrderProvider = (props) => {
 
     const getOrder = (id) => {
 
-        return fetch(`http://localhost:8000/orders/${id}`, {
+        return fetch(`http://whispering-hollows-65332.herokuapp.com/orders/${id}`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`,
             }
@@ -22,7 +22,7 @@ export const OrderProvider = (props) => {
 
 
     const getOrdersByUser = () => {
-        return fetch("http://localhost:8000/orders", {
+        return fetch("http://whispering-hollows-65332.herokuapp.com/orders", {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`
             }
@@ -32,7 +32,7 @@ export const OrderProvider = (props) => {
     }
 
     const getLimitedOrdersByUser = () => {
-        return fetch("http://localhost:8000/orders?limit=5", {
+        return fetch("http://whispering-hollows-65332.herokuapp.com/orders?limit=5", {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`
             }
@@ -42,7 +42,7 @@ export const OrderProvider = (props) => {
     }
 
     const getOrdersByUserByRestaurantId = (restaurantid) => {
-        return fetch(`http://localhost:8000/orders?restaurantid=${restaurantid}`, {
+        return fetch(`http://whispering-hollows-65332.herokuapp.com/orders?restaurantid=${restaurantid}`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`,
 
@@ -53,7 +53,7 @@ export const OrderProvider = (props) => {
     }
 
     const createOrder = (order) => {
-        return fetch("http://localhost:8000/orders", {
+        return fetch("http://whispering-hollows-65332.herokuapp.com/orders", {
             method: "POST",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`,
@@ -66,7 +66,7 @@ export const OrderProvider = (props) => {
     }
 
     const editOrder = (order) => {
-        return fetch(`http://localhost:8000/orders/${order.id}`, {
+        return fetch(`http://whispering-hollows-65332.herokuapp.com/orders/${order.id}`, {
             method: "PUT",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`,
@@ -78,7 +78,7 @@ export const OrderProvider = (props) => {
     }
 
     const deleteOrder = (orderId, restaurantid) => {
-        return fetch(`http://localhost:8000/orders/${orderId}`, {
+        return fetch(`http://whispering-hollows-65332.herokuapp.com/orders/${orderId}`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`
