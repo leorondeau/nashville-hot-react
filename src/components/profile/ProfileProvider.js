@@ -11,7 +11,7 @@ export const ProfileProvider = (props) => {
     const [profile, setProfile] = useState({ customer:{user:{}}, heat_tolerance: {}})
 
     const getProfile = () => {
-        return fetch("http://whispering-hollows-65332.herokuapp.com/profile", {
+        return fetch("https://whispering-hollows-65332.herokuapp.com/profile", {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`
             }
