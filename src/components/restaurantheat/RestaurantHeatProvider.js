@@ -13,7 +13,7 @@ export const RestaurantHeatProvider = (props) => {
     const [restaurantHeatByRestaurant, setRestaurantHeatByRestaurant ] = useState([])
 
     const getRestaurantHeats = () => {
-        return fetch("http://whispering-hollows-65332.herokuapp.com/restaurantheats", {
+        return fetch("https://whispering-hollows-65332.herokuapp.com/restaurantheats", {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`  
             }
@@ -24,7 +24,7 @@ export const RestaurantHeatProvider = (props) => {
     }
 
     const getRestaurantHeatById = (id) => {
-        return fetch(`http://whispering-hollows-65332.herokuapp.com/restaurantheats/${id}`, {
+        return fetch(`https://whispering-hollows-65332.herokuapp.com/restaurantheats/${id}`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`  
             }
@@ -35,7 +35,7 @@ export const RestaurantHeatProvider = (props) => {
     }
 
     const getRestaurantHeatByRestaurantId = (restaurantid) => {
-        return fetch(`http://whispering-hollows-65332.herokuapp.com/restaurantheats/${restaurantid}`, {
+        return fetch(`https://whispering-hollows-65332.herokuapp.com/restaurantheats/${restaurantid}`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`  
             }
@@ -47,7 +47,7 @@ export const RestaurantHeatProvider = (props) => {
 
     const getRestaurantHeatByHottest = () => {
 
-        return fetch(`http://whispering-hollows-65332.herokuapp.com/posts?sortby=hottest`, {
+        return fetch(`https://whispering-hollows-65332.herokuapp.com/posts?sortby=hottest`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`  
             }
