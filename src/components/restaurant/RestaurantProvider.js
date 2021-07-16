@@ -12,7 +12,7 @@ export const RestaurantProvider = (props) => {
     const [restaurant, setRestaurant ] = useState({})
 
     const getRestaurants = () => {
-        return fetch("http://whispering-hollows-65332.herokuapp.com/restaurants", {
+        return fetch("https://whispering-hollows-65332.herokuapp.com/restaurants", {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`  
             }
