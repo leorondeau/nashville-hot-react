@@ -12,7 +12,7 @@ export const OrderProvider = (props) => {
 
     const getOrder = (id) => {
 
-        return fetch(`http://whispering-hollows-65332.herokuapp.com/orders/${id}`, {
+        return fetch(`https://whispering-hollows-65332.herokuapp.com/orders/${id}`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`,
             }
@@ -22,7 +22,7 @@ export const OrderProvider = (props) => {
 
 
     const getOrdersByUser = () => {
-        return fetch("http://whispering-hollows-65332.herokuapp.com/orders", {
+        return fetch("https://whispering-hollows-65332.herokuapp.com/orders", {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`
             }
@@ -32,7 +32,7 @@ export const OrderProvider = (props) => {
     }
 
     const getLimitedOrdersByUser = () => {
-        return fetch("http://whispering-hollows-65332.herokuapp.com/orders?limit=5", {
+        return fetch("https://whispering-hollows-65332.herokuapp.com/orders?limit=5", {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`
             }
@@ -42,7 +42,7 @@ export const OrderProvider = (props) => {
     }
 
     const getOrdersByUserByRestaurantId = (restaurantid) => {
-        return fetch(`http://whispering-hollows-65332.herokuapp.com/orders?restaurantid=${restaurantid}`, {
+        return fetch(`https://whispering-hollows-65332.herokuapp.com/orders?restaurantid=${restaurantid}`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}`,
 
