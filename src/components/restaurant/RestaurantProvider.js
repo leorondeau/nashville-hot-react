@@ -23,7 +23,7 @@ export const RestaurantProvider = (props) => {
     }
 
     const getRestaurantById = (id) => {
-        return fetch(`http://whispering-hollows-65332.herokuapp.com/restaurants/${id}`, {
+        return fetch(`https://whispering-hollows-65332.herokuapp.com/restaurants/${id}`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("nashvillehot_token")}` ,              
             }
