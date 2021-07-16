@@ -11,7 +11,7 @@ export const Login = props => {
     const handleLogin = (e) => {
         e.preventDefault()
         
-        return fetch("http://whispering-hollows-65332.herokuapp.com/login", {
+        return fetch("https://whispering-hollows-65332.herokuapp.com/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
