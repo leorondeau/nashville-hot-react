@@ -69,3 +69,10 @@ fieldset {
     min-width: 15rem;
     min-height: 5rem;
 } 
+
+input[type='range']::-webkit-slider-runnable-track {
+      height: 10px;
+      -webkit-appearance: none;
+      color: #eb0808;
+      margin-top: -1px;
+    }
