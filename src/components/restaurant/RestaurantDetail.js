@@ -4,7 +4,7 @@ import { RestaurantContext } from './RestaurantProvider'
 import "./Restaurant.css"
 import "../profile/Profile.css"
 import flaming from "./flaming.gif"
-import boltons from 'src/components/restaurant/images/nashvillehotlogos/boltons.png'
+// import boltons from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/boltons.png'
 // import princes from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/princes.webp'
 // import hattiebs from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/hattiebs.png'
 // import slowburn from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/slowburn.png'
