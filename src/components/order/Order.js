@@ -3,8 +3,8 @@ import { useParams, useHistory } from 'react-router-dom'
 import { OrderContext } from './OrderProvider'
 import { RestaurantHeatContext } from '../restaurantheat/RestaurantHeatProvider'
 import { Link } from 'react-router-dom'
-import pencil from "./pencil.svg"
-import trash from "./trash.svg"
+import pencil from "/Users/admin/workspace/nashvillehotindexreact/src/components/order/pencil.svg"
+import trash from "/Users/admin/workspace/nashvillehotindexreact/src/components/order/trash.svg"
 import "./Order.css"
 
 

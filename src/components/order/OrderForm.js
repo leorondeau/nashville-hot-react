@@ -22,14 +22,14 @@ export const OrderForm = (props) => {
         restaurantid: 0,
         restaurantheatid: 0,
         note: "",
-        enjoyable: false,
+        enjoyable: true,
         rating: 1
     })
     const HandleReset = (() => setCurrentOrder({
         restaurantid: 0,
         restaurantheatid: 0,
         note: "",
-        enjoyable: false,
+        enjoyable: true,
         rating: 1
     }))
 
