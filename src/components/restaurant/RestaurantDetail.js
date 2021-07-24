@@ -38,7 +38,6 @@ export const RestaurantDetail = (props) => {
         if (restaurantid === 0) {history.push("/")}
         else { getRestaurantById(restaurantid) }
     }, [restaurantid])
-     
     return (
         <section className="restaurant ">
             <div className="restaurant__detail">
@@ -47,6 +46,7 @@ export const RestaurantDetail = (props) => {
                 </div>
                 <div className="image">
 
+            {console.log('image', restaurant.img)}
                     <div >
                         <img src={restaurant.img} className="restaurant__img"></img>
                     </div>
