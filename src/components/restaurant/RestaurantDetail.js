@@ -22,7 +22,7 @@ import flaming from "./flaming.gif"
 // import bjs from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/bjs.png'
 // import behive from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/behive.png'
 
-import behive from /Users/admin/workspace/nashvillehotindexreact/src/components/restaurant/images/behive.png
+import behive from '/Users/admin/workspace/nashvillehotindexreact/src/components/restaurant/images/behive.png'
 /*
     Renders the details of a restaurant once selected from the dropdown
     as well as the heat suggestion for user from the selected restaurant
