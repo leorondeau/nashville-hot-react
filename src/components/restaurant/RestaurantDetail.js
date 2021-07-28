@@ -4,7 +4,7 @@ import { RestaurantContext } from './RestaurantProvider'
 import "./Restaurant.css"
 import "../profile/Profile.css"
 import flaming from "./flaming.gif"
-import boltons from './boltons.png'
+// import boltons from './boltons.png'
 import behive from './behive.png'
 import Bigshakes from './Bigshakes.png'
 import bjs from './bjs.png'
@@ -25,18 +25,17 @@ import southernv from './southernv.webp'
 /*
     Renders the details of a restaurant once selected from the dropdown
     as well as the heat suggestion for user from the selected restaurant
-*/      
+*/
 
 export const RestaurantDetail = (props) => {
     const { restaurant, getRestaurantById } = useContext(RestaurantContext)
     const params = useParams()
     const history = useHistory()
     const restaurantid = parseInt(params.restaurantId)
-    
-    console.log('bjs',bjs)
-    console.log('fourhdegrees', fourhdegrees)
+
+
     useEffect(() => {
-        if (restaurantid === 0) {history.push("/")}
+        if (restaurantid === 0) { history.push("/") }
         else { getRestaurantById(restaurantid) }
     }, [restaurantid])
     return (
@@ -47,7 +46,7 @@ export const RestaurantDetail = (props) => {
                 </div>
                 <div className="image">
 
-            {console.log('image', restaurant.img)}
+
                     <div >
                         <img src={restaurant.img} className="restaurant__img"></img>
                     </div>
