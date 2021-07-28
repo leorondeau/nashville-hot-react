@@ -33,7 +33,8 @@ export const RestaurantDetail = (props) => {
     const history = useHistory()
     const restaurantid = parseInt(params.restaurantId)
     
-    
+    console.log('bjs',bjs)
+    console.log('fourhdegrees', fourhdegrees)
     useEffect(() => {
         if (restaurantid === 0) {history.push("/")}
         else { getRestaurantById(restaurantid) }
