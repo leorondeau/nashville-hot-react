@@ -49,7 +49,7 @@ export const RestaurantDetail = (props) => {
 
             {console.log('image', restaurant.img)}
                     <div >
-                        <img src={image} className="restaurant__img"></img>
+                        <img src={restaurant.img} className="restaurant__img"></img>
                     </div>
                 </div>
                 <h5>Heat Suggestion:</h5>
