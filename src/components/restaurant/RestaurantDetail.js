@@ -33,7 +33,7 @@ export const RestaurantDetail = (props) => {
     const history = useHistory()
     const restaurantid = parseInt(params.restaurantId)
     console.log('boltons', boltons)
-    console.log('bjs', bjs)
+    console.log('partyfowl', partyfowl)
     
 
     useEffect(() => {
