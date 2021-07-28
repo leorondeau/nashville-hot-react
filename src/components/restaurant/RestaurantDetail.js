@@ -10,7 +10,7 @@ import Bigshakes from './Bigshakes.png'
 import bjs from './bjs.png'
 import firecracker from './firecracker.png'
 import flamies from './flamies.jpeg'
-import fourhdegrees from './fourhdegrees'
+import fourhdegrees from './fourhdegrees.gif'
 import hattiebs from './hattiebs.png'
 import helens from './helens.png'
 import hotstuff from './hotstuff.png'
@@ -18,6 +18,9 @@ import moores from './moores.png'
 import partyfowl from './partyfowl.png'
 import pepperfire from './pepperfire.webp'
 import princes from './princes.webp'
+import scoreboard from './scoreboard.webp'
+import slowburn from './slowburn.png'
+import southernv from './southernv.webp'
 
 /*
     Renders the details of a restaurant once selected from the dropdown
