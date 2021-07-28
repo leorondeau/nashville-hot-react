@@ -4,9 +4,8 @@ import { RestaurantContext } from './RestaurantProvider'
 import "./Restaurant.css"
 import "../profile/Profile.css"
 import flaming from "./flaming.gif"
-// import boltons from './boltons.png'
 import behive from './behive.png'
-// import Bigshakes from './Bigshakes.png'
+import bigshakes from './bigshakes.png'
 import bjs from './bjs.png'
 import firecracker from './firecracker.png'
 import flamies from './flamies.jpeg'
@@ -17,6 +16,7 @@ import hotstuff from './hotstuff.png'
 import moores from './moores.png'
 import partyfowl from './partyfowl.png'
 import pepperfire from './pepperfire.webp'
+import boltons from './boltons.png'
 import princes from './princes.webp'
 import scoreboard from './scoreboard.webp'
 import slowburn from './slowburn.png'
