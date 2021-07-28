@@ -32,7 +32,6 @@ export const RestaurantDetail = (props) => {
     const params = useParams()
     const history = useHistory()
     const restaurantid = parseInt(params.restaurantId)
-
     
 
     useEffect(() => {
