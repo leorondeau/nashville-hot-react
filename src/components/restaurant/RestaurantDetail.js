@@ -6,7 +6,7 @@ import "../profile/Profile.css"
 import flaming from "./flaming.gif"
 // import boltons from './boltons.png'
 import behive from './behive.png'
-// import Bigshakes from './Bigshakes.png'
+// import bigshakes from './bigshakes.png'
 import bjs from './bjs.png'
 import firecracker from './firecracker.png'
 import flamies from './flamies.jpeg'
