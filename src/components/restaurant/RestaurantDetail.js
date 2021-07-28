@@ -4,9 +4,9 @@ import { RestaurantContext } from './RestaurantProvider'
 import "./Restaurant.css"
 import "../profile/Profile.css"
 import flaming from "./flaming.gif"
-// import boltons from './boltons.png'
+import boltons from './boltons.png'
 import behive from './behive.png'
-// import Bigshakes from './Bigshakes.png'
+import Bigshakes from './Bigshakes.png'
 import bjs from './bjs.png'
 import firecracker from './firecracker.png'
 import flamies from './flamies.jpeg'
@@ -33,6 +33,7 @@ export const RestaurantDetail = (props) => {
     const history = useHistory()
     const restaurantid = parseInt(params.restaurantId)
 
+    
 
     useEffect(() => {
         if (restaurantid === 0) { history.push("/") }
