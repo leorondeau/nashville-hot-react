@@ -4,7 +4,8 @@ import { RestaurantContext } from './RestaurantProvider'
 import "./Restaurant.css"
 import "../profile/Profile.css"
 import flaming from "./flaming.gif"
-// import boltons from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/boltons.png'
+import Boltons from './Boltons.png'
+import behive from './behive.png'
 // import princes from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/princes.webp'
 // import hattiebs from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/hattiebs.png'
 // import slowburn from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/slowburn.png'
@@ -22,7 +23,7 @@ import flaming from "./flaming.gif"
 // import bjs from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/bjs.png'
 // import behive from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/behive.png'
 
-import behive from './behive.png'
+
 
 /*
     Renders the details of a restaurant once selected from the dropdown
@@ -34,8 +35,8 @@ export const RestaurantDetail = (props) => {
     const params = useParams()
     const history = useHistory()
     const restaurantid = parseInt(params.restaurantId)
-    const image = restaurant.img
-    console.log(behive)
+    
+    
     useEffect(() => {
         if (restaurantid === 0) {history.push("/")}
         else { getRestaurantById(restaurantid) }
