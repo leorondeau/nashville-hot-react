@@ -23,6 +23,7 @@ import flaming from "./flaming.gif"
 // import behive from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/behive.png'
 
 import behive from './behive.png'
+
 /*
     Renders the details of a restaurant once selected from the dropdown
     as well as the heat suggestion for user from the selected restaurant
@@ -34,7 +35,7 @@ export const RestaurantDetail = (props) => {
     const history = useHistory()
     const restaurantid = parseInt(params.restaurantId)
     const image = restaurant.img
- 
+    console.log(behive)
     useEffect(() => {
         if (restaurantid === 0) {history.push("/")}
         else { getRestaurantById(restaurantid) }
@@ -49,7 +50,7 @@ export const RestaurantDetail = (props) => {
 
             {console.log('image', restaurant.img)}
                     <div >
-                        <img src={image} className="restaurant__img"></img>
+                        <img src={restaurant.img} className="restaurant__img"></img>
                     </div>
                 </div>
                 <h5>Heat Suggestion:</h5>
