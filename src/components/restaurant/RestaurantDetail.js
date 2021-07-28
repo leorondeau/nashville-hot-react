@@ -4,8 +4,9 @@ import { RestaurantContext } from './RestaurantProvider'
 import "./Restaurant.css"
 import "../profile/Profile.css"
 import flaming from "./flaming.gif"
-import Boltons from './Boltons.png'
+import boltons from './boltons.png'
 import behive from './behive.png'
+import Bigshakes from './Bigshakes.png'
 
 // import princes from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/princes.webp'
 // import hattiebs from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/hattiebs.png'
