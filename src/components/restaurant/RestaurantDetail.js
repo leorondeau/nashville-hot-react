@@ -7,25 +7,17 @@ import flaming from "./flaming.gif"
 import boltons from './boltons.png'
 import behive from './behive.png'
 import Bigshakes from './Bigshakes.png'
-
-// import princes from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/princes.webp'
-// import hattiebs from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/hattiebs.png'
-// import slowburn from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/slowburn.png'
-// import fourdegrees from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/fourdegrees.gif'
-// import bigshakes from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/Bigshakes.png'
-// import firecracker from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/firecracker.png'
-// import flamies from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/flamies.jpeg'
-// import helens from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/helens.png'
-// import hotstuff from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/hotstuff.png'
-// import moores from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/moores.png'
-// import partyfowl from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/partyfowl.png'
-// import pepperfire from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/pepperfire.webp'
-// import scoreboard from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/scoreboard.webp'
-// import southernv from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/southernv.webp'
-// import bjs from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/bjs.png'
-// import behive from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/behive.png'
-
-
+import bjs from './bjs.png'
+import firecracker from './firecracker.png'
+import flamies from './flamies.jpeg'
+import fourhdegrees from './fourhdegrees'
+import hattiebs from './hattiebs.png'
+import helens from './helens.png'
+import hotstuff from './hotstuff.png'
+import moores from './moores.png'
+import partyfowl from './partyfowl.png'
+import pepperfire from './pepperfire.webp'
+import princes from './princes.webp'
 
 /*
     Renders the details of a restaurant once selected from the dropdown
