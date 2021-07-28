@@ -6,6 +6,7 @@ import "../profile/Profile.css"
 import flaming from "./flaming.gif"
 import Boltons from './Boltons.png'
 import behive from './behive.png'
+
 // import princes from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/princes.webp'
 // import hattiebs from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/hattiebs.png'
 // import slowburn from '/Users/admin/workspace/nashvillehotindexreact/src/images/nashvillehotlogos/slowburn.png'
