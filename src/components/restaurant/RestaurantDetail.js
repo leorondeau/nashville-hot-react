@@ -4,7 +4,7 @@ import { RestaurantContext } from './RestaurantProvider'
 import "./Restaurant.css"
 import "../profile/Profile.css"
 import flaming from "./flaming.gif"
-import boltons from './boltons.png'
+// import boltons from './boltons.png'
 import behive from './behive.png'
 import Bigshakes from './Bigshakes.png'
 import bjs from './bjs.png'
